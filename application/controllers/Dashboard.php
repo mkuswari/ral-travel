@@ -4,6 +4,7 @@ class Dashboard extends CI_Controller
 
 	public function index()
 	{
-		echo "Dashboard";
+		$data["pageTitle"] = "Dashboard";
+		$this->load->view("backend/dashboard_view", $data);
 	}
 }
