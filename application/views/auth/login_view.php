@@ -5,7 +5,7 @@
 <?php $this->load->view("components/auth/_head"); ?>
 <!-- end of head -->
 
-<body class="hold-transition login-page" style="background-image: url();">
+<body class="hold-transition login-page">
 	<div class="login-box">
 		<div class="login-logo">
 			<a href="assets/backend/index2.html"><b>Ral</b>T&T</a>

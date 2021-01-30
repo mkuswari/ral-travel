@@ -11,7 +11,7 @@ class Auth extends CI_Controller
 
 	public function index()
 	{
-		$data["pageTitle"] = "Login";
+		$data["title"] = "Login";
 
 		$this->_loginFormValidation();
 		if ($this->form_validation->run() == FALSE) {
@@ -57,7 +57,7 @@ class Auth extends CI_Controller
 
 	public function register()
 	{
-		$data["pageTitle"] = "Register";
+		$data["title"] = "Register";
 
 		$this->__registerFormValidation();
 		if ($this->form_validation->run() == FALSE) {
