@@ -121,13 +121,6 @@ class User extends CI_Controller
 		redirect('kelola-users');
 	}
 
-	public function detail($id)
-	{
-		$data["title"] = "Detail User";
-		$data["user"] = $this->User_model->getUserById($id);
-		$this->load->view("backend/users/detail_view", $data);
-	}
-
 	// make a form validation
 	private function _validateCreateForm()
 	{

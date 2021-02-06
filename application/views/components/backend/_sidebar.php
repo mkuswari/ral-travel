@@ -1,45 +1,45 @@
-<aside class="main-sidebar sidebar-dark-primary elevation-4">
-	<!-- Brand Logo -->
-	<a href="<?= base_url("dashboard") ?>" class="brand-link text-center">
-		<span class="brand-text font-weight-light">Admin Ral T&T</span>
-	</a>
+<!-- ========== Left Sidebar Start ========== -->
+<div class="left side-menu">
+	<div class="slimscroll-menu" id="remove-scroll">
 
-	<!-- Sidebar -->
-	<div class="sidebar">
-		<!-- Sidebar user panel (optional) -->
-		<div class="user-panel mt-3 pb-3 mb-3 d-flex">
-			<div class="image">
-				<img src="<?= base_url("assets/uploads/avatars/" . $this->session->userdata("avatar")) ?>" class="img-circle elevation-2" alt="User Image">
-			</div>
-			<div class="info">
-				<a href="#" class="d-block"><?= $this->session->userdata("name"); ?></a>
-			</div>
-		</div>
-
-		<!-- Sidebar Menu -->
-		<nav class="mt-2">
-			<ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-				<!-- Add icons to the links using the .nav-icon class
-               with font-awesome or any other icon font library -->
-				<li class="nav-item">
-					<a href="<?= base_url("dashboard") ?>" class="nav-link">
-						<i class="nav-icon fas fa-fw fa-tachometer-alt"></i>
-						<p>
-							Dashboard
-						</p>
+		<!--- Sidemenu -->
+		<div id="sidebar-menu">
+			<!-- Left Menu Start -->
+			<ul class="metismenu" id="side-menu">
+				<li class="menu-title">Dashboard</li>
+				<li>
+					<a href="<?= base_url("dashboard") ?>" class="waves-effect">
+						<i class="icon-accelerator"></i><span> Dashboard
+						</span>
 					</a>
 				</li>
-				<li class="nav-item">
-					<a href="<?= base_url("kelola-users") ?>" class="nav-link">
-						<i class="nav-icon fas fa-fw fa-users"></i>
-						<p>
-							Kelola Users
-						</p>
+
+				<li class="menu-title">Menu</li>
+
+				<li>
+					<a href="<?= base_url("kelola-users") ?>" class="waves-effect">
+						<i class="icon-accelerator"></i><span> Kelola Users
+						</span>
 					</a>
 				</li>
+
+				<!-- <li>
+					<a href="javascript:void(0);" class="waves-effect"><i class="icon-pencil-ruler"></i> <span>
+							UI Elements <span class="float-right menu-arrow"><i class="mdi mdi-chevron-right"></i></span> </span> </a>
+					<ul class="submenu">
+						<li><a href="ui-alerts.html">Alerts</a></li>
+						<li><a href="ui-badge.html">Badge</a></li>
+					</ul>
+				</li> -->
+
 			</ul>
-		</nav>
-		<!-- /.sidebar-menu -->
+
+		</div>
+		<!-- Sidebar -->
+		<div class="clearfix"></div>
+
 	</div>
-	<!-- /.sidebar -->
-</aside>
+	<!-- Sidebar -left -->
+
+</div>
+<!-- Left Sidebar End -->

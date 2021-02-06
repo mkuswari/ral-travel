@@ -82,6 +82,20 @@ class Auth extends CI_Controller
 		}
 	}
 
+	public function logout()
+	{
+		$this->session->unset_userdata('id');
+		$this->session->unset_userdata('name');
+		$this->session->unset_userdata('email');
+		$this->session->unset_userdata('phone');
+		$this->session->unset_userdata('address');
+		$this->session->unset_userdata('avatar');
+		$this->session->unset_userdata('role');
+		$this->session->unset_userdata('created_at');
+		$this->session->set_flashdata('message', '<div class="alert alert-success">Anda Berhasil logout</div>');
+		redirect("login");
+	}
+
 	private function _loginFormValidation()
 	{
 		$this->form_validation->set_rules("email", "E-mail", "required|trim|valid_email");

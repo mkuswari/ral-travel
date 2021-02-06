@@ -1,73 +1,82 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <!-- head -->
 <?php $this->load->view("components/backend/_head"); ?>
-<link rel="stylesheet" href="<?= base_url("assets/backend/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css") ?>">
-<link rel="stylesheet" href="<?= base_url("assets/backend/plugins/datatables-responsive/css/responsive.bootstrap4.min.css") ?>">
 <!-- end of head -->
 
-<body class="hold-transition sidebar-mini layout-fixed">
-	<div class="wrapper">
+<!-- datatables -->
+<link href="<?= base_url("assets/backend/plugins/datatables/dataTables.bootstrap4.min.css") ?>" rel="stylesheet" type="text/css" />
+<link href="<?= base_url("assets/backend/plugins/datatables/buttons.bootstrap4.min.css") ?>" rel="stylesheet" type="text/css" />
+<link href="<?= base_url("assets/backend/plugins/datatables/responsive.bootstrap4.min.css") ?>" rel="stylesheet" type="text/css" />
+<!-- end of datatabes -->
 
-		<!-- Navbar -->
+<body>
+
+	<!-- Begin page -->
+	<div id="wrapper">
+
+		<!-- topbar -->
 		<?php $this->load->view("components/backend/_topbar"); ?>
-		<!-- /.navbar -->
+		<!-- end of topbar -->
 
-		<!-- Main Sidebar Container -->
+		<!-- sidebar -->
 		<?php $this->load->view("components/backend/_sidebar"); ?>
+		<!-- end of sidebar -->
 
-		<!-- Content Wrapper. Contains page content -->
-		<div class="content-wrapper">
-			<!-- Content Header (Page header) -->
-			<div class="content-header">
+		<!-- ============================================================== -->
+		<!-- Start right Content here -->
+		<!-- ============================================================== -->
+		<div class="content-page">
+			<!-- Start content -->
+			<div class="content">
 				<div class="container-fluid">
-					<div class="row mb-2">
-						<div class="col-sm-6">
-							<h1 class="m-0 text-dark">Kelola Users</h1>
-						</div><!-- /.col -->
-					</div><!-- /.row -->
-				</div><!-- /.container-fluid -->
-			</div>
-			<!-- /.content-header -->
+					<div class="page-title-box">
+						<div class="row justify-content-between">
+							<div class="col-auto">
+								<h4 class="page-title">Kelola Users</h4>
+							</div>
+							<div class="col-auto">
+								<a href="<?= base_url("kelola-users/tambah") ?>" class="btn btn-primary">Tambah User</a>
+							</div>
+						</div>
+						<!-- end row -->
+					</div>
+					<!-- end page-title -->
 
-			<!-- Main content -->
-			<section class="content">
-				<div class="container-fluid">
+
 					<div class="row">
 						<div class="col-12">
+
+							<?= $this->session->flashdata('message') ?>
+
 							<div class="card">
-								<div class="card-header border-0">
-									<a href="<?= base_url("kelola-users/tambah") ?>" class="btn btn-primary">Tambah Users</a>
-								</div>
 								<div class="card-body">
-
-									<!-- flashdata -->
-									<?= $this->session->flashdata('message'); ?>
-									<!-- end of flashdata -->
-
-									<table id="example1" class="table table-bordered table-striped">
+									<table id="datatable" class="table table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing:0; width:100%;">
 										<thead>
 											<tr>
 												<th width="10">No.</th>
-												<th width="64">Avatar</th>
-												<th>Name</th>
-												<th>E-mail</th>
-												<th>Role</th>
-												<th>Created at</th>
-												<th width="150">Action</th>
+												<th width="50">Avatar</th>
+												<th width="225">Nama</th>
+												<th width="225">Email</th>
+												<th width="180">Phone</th>
+												<th>Alamat</th>
+												<th width="50">Hak Akses</th>
+												<th width="100">Aksi</th>
 											</tr>
 										</thead>
 										<tbody>
-											<?php $no = 1; ?>
+											<?php $i = 1; ?>
 											<?php foreach ($users as $user) : ?>
 												<tr>
-													<td><?= $no++; ?></td>
+													<td><?= $i++; ?></td>
 													<td>
-														<img src="<?= base_url("assets/uploads/avatars/" . $user["avatar"]) ?>" style="width: 64px; height: 64px; object-fit:cover; object-position:center;" class="rounded-circle">
+														<img src="<?= base_url("assets/uploads/avatars/" . $user["avatar"]) ?>" class="rounded-circle" style="width:50px; height:50px; object-fit:cover; object-position:center;">
 													</td>
 													<td><?= $user["name"] ?></td>
 													<td><?= $user["email"] ?></td>
+													<td><?= $user["phone"] ?></td>
+													<td><?= $user["address"] ?></td>
 													<td>
 														<?php if ($user["role"] == "admin") : ?>
 															<span class="badge badge-success">Admin</span>
@@ -75,11 +84,9 @@
 															<span class="badge badge-warning">Member</span>
 														<?php endif; ?>
 													</td>
-													<td><?= date('d F Y', strtotime($user["created_at"])) ?></td>
 													<td>
-														<a href="<?= base_url("kelola-users/detail/" . $user["id"]) ?>" class="btn btn-info btn-sm">Detail</a>
-														<a href="<?= base_url("kelola-users/update/" . $user["id"]) ?>" class="btn btn-warning btn-sm">Edit</a>
-														<a href="<?= base_url("kelola-users/hapus/" . $user["id"]) ?>" class="btn btn-danger btn-sm" onclick="return confirm('Hapus user ini dari sistem?')">Delete</a>
+														<a href="<?= base_url("kelola-users/update/" . $user["id"]) ?>" class="btn btn-warning"><i class="mdi mdi-pencil"></i></a>
+														<a href="<?= base_url("kelola-users/hapus/" . $user["id"]) ?>" class="btn btn-danger" onclick="return confirm('Hapus User dari Sistem?')"><i class="mdi mdi-trash-can"></i></a>
 													</td>
 												</tr>
 											<?php endforeach; ?>
@@ -89,39 +96,35 @@
 							</div>
 						</div>
 					</div>
-				</div><!-- /.container-fluid -->
-			</section>
-			<!-- /.content -->
+
+				</div>
+				<!-- container-fluid -->
+
+			</div>
+			<!-- content -->
+
+			<!-- footer -->
+			<?php $this->load->view("components/backend/_footer"); ?>
+			<!-- end of footer -->
+
 		</div>
-		<!-- /.content-wrapper -->
+		<!-- ============================================================== -->
+		<!-- End Right content here -->
+		<!-- ============================================================== -->
 
-		<!-- footer -->
-		<?php $this->load->view("components/backend/_footer"); ?>
-		<!-- end of footer -->
-
-		<!-- Control Sidebar -->
-		<aside class="control-sidebar control-sidebar-dark">
-			<!-- Control sidebar content goes here -->
-		</aside>
-		<!-- /.control-sidebar -->
 	</div>
-	<!-- ./wrapper -->
+	<!-- END wrapper -->
 
 	<!-- scripts -->
 	<?php $this->load->view("components/backend/_scripts"); ?>
-	<script src="<?= base_url("assets/backend/plugins/datatables/jquery.dataTables.min.js") ?>"></script>
-	<script src="<?= base_url("assets/backend/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js") ?>"></script>
-	<script src="<?= base_url("assets/backend/plugins/datatables-responsive/js/dataTables.responsive.min.js") ?>"></script>
-	<script src="<?= base_url("assets/backend/plugins/datatables-responsive/js/responsive.bootstrap4.min.js") ?>"></script>
-	<script>
-		$(function() {
-			$("#example1").DataTable({
-				"responsive": true,
-				"autoWidth": false,
-			});
-		});
-	</script>
 	<!-- end of scripts -->
+	<!-- datatables -->
+	<script src="<?= base_url("assets/backend/plugins/datatables/jquery.dataTables.min.js") ?>"></script>
+	<script src="<?= base_url("assets/backend/plugins/datatables/dataTables.bootstrap4.min.js") ?>"></script>
+	<script src="<?= base_url("assets/backend/plugins/datatables/dataTables.responsive.min.js") ?>"></script>
+	<script src="<?= base_url("assets/backend/plugins/datatables/responsive.bootstrap4.min.js") ?>"></script>
+	<script src="<?= base_url("assets/backend/assets/pages/datatables.init.js") ?>"></script>
+	<!-- end of datatables -->
 </body>
 
 </html>

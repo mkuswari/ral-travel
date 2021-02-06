@@ -1,18 +1,15 @@
 <head>
-	<meta charset="utf-8">
+	<meta charset="utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Ral T&T | <?= $title; ?></title>
-	<!-- Tell the browser to be responsive to screen width -->
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+	<title>Ral t&t - <?= $title; ?></title>
+	<meta content="Responsive admin theme build on top of Bootstrap 4" name="description" />
+	<meta content="Themesdesign" name="author" />
+	<link rel="shortcut icon" href="<?= base_url("assets/backend/assets/images/favicon.ico") ?>">
 
-	<!-- Font Awesome -->
-	<link rel="stylesheet" href="<?= base_url("assets/backend/plugins/fontawesome-free/css/all.min.css") ?>">
-	<!-- Ionicons -->
-	<link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-	<!-- icheck bootstrap -->
-	<link rel="stylesheet" href="<?= base_url("assets/backend/plugins/icheck-bootstrap/icheck-bootstrap.min.css") ?>">
-	<!-- Theme style -->
-	<link rel="stylesheet" href="<?= base_url("assets/backend/dist/css/adminlte.min.css") ?>">
-	<!-- Google Font: Source Sans Pro -->
-	<link href="https://fonts.googleapis.com/css?family=Mulish:300,400,400i,700" rel="stylesheet">
+	<link href="<?= base_url("assets/backend/assets/css/bootstrap.min.css") ?>" rel="stylesheet" type="text/css">
+	<link href="<?= base_url("assets/backend/assets/css/metismenu.min.css") ?>" rel="stylesheet" type="text/css">
+	<link href="<?= base_url("assets/backen/assets/css/icons.css") ?>" rel="stylesheet" type="text/css">
+	<link href="<?= base_url("assets/backend/assets/css/style.css") ?>" rel="stylesheet" type="text/css">
+
 </head>

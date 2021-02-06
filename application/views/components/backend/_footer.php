@@ -1,7 +1,3 @@
-<footer class="main-footer">
-	<strong>Copyright &copy; <?= date('Y') ?> <a href="<?= base_url() ?>">Ral T&T Travel Agency</a>.</strong>
-	All rights reserved.
-	<div class="float-right d-none d-sm-inline-block">
-		<b>Version</b> 1.0.0
-	</div>
+<footer class="footer">
+	© <?= date('Y') ?> RAL T&T Travel Agency <span class="d-none d-sm-inline-block"> - Crafted with <i class="mdi mdi-heart text-danger"></i> by Themesdesign</span>.
 </footer>

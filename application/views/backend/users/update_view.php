@@ -1,37 +1,47 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <!-- head -->
 <?php $this->load->view("components/backend/_head"); ?>
 <!-- end of head -->
 
-<body class="hold-transition sidebar-mini layout-fixed">
-	<div class="wrapper">
+<!-- datatables -->
+<link href="<?= base_url("assets/backend/plugins/datatables/dataTables.bootstrap4.min.css") ?>" rel="stylesheet" type="text/css" />
+<link href="<?= base_url("assets/backend/plugins/datatables/buttons.bootstrap4.min.css") ?>" rel="stylesheet" type="text/css" />
+<link href="<?= base_url("assets/backend/plugins/datatables/responsive.bootstrap4.min.css") ?>" rel="stylesheet" type="text/css" />
+<!-- end of datatabes -->
 
-		<!-- Navbar -->
+<body>
+
+	<!-- Begin page -->
+	<div id="wrapper">
+
+		<!-- topbar -->
 		<?php $this->load->view("components/backend/_topbar"); ?>
-		<!-- /.navbar -->
+		<!-- end of topbar -->
 
-		<!-- Main Sidebar Container -->
+		<!-- sidebar -->
 		<?php $this->load->view("components/backend/_sidebar"); ?>
+		<!-- end of sidebar -->
 
-		<!-- Content Wrapper. Contains page content -->
-		<div class="content-wrapper">
-			<!-- Content Header (Page header) -->
-			<div class="content-header">
+		<!-- ============================================================== -->
+		<!-- Start right Content here -->
+		<!-- ============================================================== -->
+		<div class="content-page">
+			<!-- Start content -->
+			<div class="content">
 				<div class="container-fluid">
-					<div class="row mb-2">
-						<div class="col-sm-6">
-							<h1 class="m-0 text-dark">Update User</h1>
-						</div><!-- /.col -->
-					</div><!-- /.row -->
-				</div><!-- /.container-fluid -->
-			</div>
-			<!-- /.content-header -->
+					<div class="page-title-box">
+						<div class="row justify-content-between">
+							<div class="col-auto">
+								<h4 class="page-title">Update Data User</h4>
+							</div>
+						</div>
+						<!-- end row -->
+					</div>
+					<!-- end page-title -->
 
-			<!-- Main content -->
-			<section class="content">
-				<div class="container-fluid">
+
 					<div class="row">
 						<div class="col-12">
 							<div class="card">
@@ -89,7 +99,7 @@
 												<div class="form-group row">
 													<div class="col-sm-2"></div>
 													<div class="col-sm-10">
-														<button type="submit" class="btn btn-primary">Tambah User</button>
+														<button type="submit" class="btn btn-primary">Update User</button>
 														<button type="reset" class="btn btn-warning text-white">Reset Form</button>
 													</div>
 												</div>
@@ -100,21 +110,35 @@
 							</div>
 						</div>
 					</div>
-				</div><!-- /.container-fluid -->
-			</section>
-			<!-- /.content -->
-		</div>
-		<!-- /.content-wrapper -->
 
-		<!-- footer -->
-		<?php $this->load->view("components/backend/_footer"); ?>
-		<!-- end of footer -->
+				</div>
+				<!-- container-fluid -->
+
+			</div>
+			<!-- content -->
+
+			<!-- footer -->
+			<?php $this->load->view("components/backend/_footer"); ?>
+			<!-- end of footer -->
+
+		</div>
+		<!-- ============================================================== -->
+		<!-- End Right content here -->
+		<!-- ============================================================== -->
+
 	</div>
-	<!-- ./wrapper -->
+	<!-- END wrapper -->
 
 	<!-- scripts -->
 	<?php $this->load->view("components/backend/_scripts"); ?>
 	<!-- end of scripts -->
+	<!-- datatables -->
+	<script src="<?= base_url("assets/backend/plugins/datatables/jquery.dataTables.min.js") ?>"></script>
+	<script src="<?= base_url("assets/backend/plugins/datatables/dataTables.bootstrap4.min.js") ?>"></script>
+	<script src="<?= base_url("assets/backend/plugins/datatables/dataTables.responsive.min.js") ?>"></script>
+	<script src="<?= base_url("assets/backend/plugins/datatables/responsive.bootstrap4.min.js") ?>"></script>
+	<script src="<?= base_url("assets/backend/assets/pages/datatables.init.js") ?>"></script>
+	<!-- end of datatables -->
 </body>
 
 </html>

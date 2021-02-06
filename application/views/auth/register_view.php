@@ -1,77 +1,76 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <!-- head -->
 <?php $this->load->view("components/auth/_head"); ?>
 <!-- end of head -->
 
-<body class="hold-transition login-page" style="background-image: url();">
-	<div class="login-box">
-		<div class="login-logo">
-			<a href="assets/backend/index2.html"><b>Ral</b>T&T</a>
-		</div>
-		<!-- /.login-logo -->
-		<div class="card">
-			<div class="card-body login-card-body">
-				<p class="login-box-msg">Silahkan Login</p>
+<body style="background-image: url(http://localhost/ral-travel/assets/frontend/images/bg_5.jpg)">
 
-				<form action="<?= base_url("register") ?>" method="post">
-					<div class="input-group mb-3">
-						<input type="text" name="name" id="name" class="form-control <?= form_error('name') ? 'is-invalid' : ''; ?>" placeholder="Nama">
-						<div class="input-group-append">
-							<div class="input-group-text">
-								<span class="fas fa-user"></span>
-							</div>
+	<!-- Begin page -->
+	<!-- <div class="accountbg"></div> -->
+	<div class="wrapper-page">
+
+		<?= $this->session->flashdata("message") ?>
+
+		<div class="card card-pages shadow-none">
+
+			<div class="card-body">
+				<h5 class="font-18 text-center">Register</h5>
+
+				<form class="form-horizontal m-t-30" action="<?= base_url("register") ?>" method="post">
+
+					<div class="form-group">
+						<div class="col-12">
+							<label for="name">Nama Lengkap</label>
+							<input type="text" class="form-control <?= form_error("name") ? "is-invalid" : "" ?>" name="name" id="name" placeholder="Masukkan Nama">
+							<?= form_error('name', '<div class="invalid-feedback font-weight-bold pl-1">', '</div>') ?>
 						</div>
-						<?= form_error('name', '<div class="invalid-feedback font-weight-bold pl-1">', '</div>') ?>
 					</div>
-					<div class="input-group mb-3">
-						<input type="text" name="email" id="email" class="form-control <?= form_error('email') ? 'is-invalid' : ''; ?>" placeholder="Email">
-						<div class="input-group-append">
-							<div class="input-group-text">
-								<span class="fas fa-envelope"></span>
-							</div>
+					<div class="form-group">
+						<div class="col-12">
+							<label for="email">Email</label>
+							<input class="form-control <?= form_error("email") ? "is-invalid" : ""; ?>" type="text" name="email" id="email" placeholder="Masukkan E-mail">
+							<?= form_error('email', '<div class="invalid-feedback font-weight-bold pl-1">', '</div>') ?>
 						</div>
-						<?= form_error('email', '<div class="invalid-feedback font-weight-bold pl-1">', '</div>') ?>
 					</div>
-					<div class="input-group mb-3">
-						<input type="password" name="password" id="password" class="form-control <?= form_error('password') ? 'is-invalid' : ''; ?>" placeholder="Password">
-						<div class="input-group-append">
-							<div class="input-group-text">
-								<span class="fas fa-lock"></span>
-							</div>
+
+					<div class="form-group">
+						<div class="col-12">
+							<label for="password">Password</label>
+							<input class="form-control <?= form_error("password") ? "is-invalid" : ""; ?>" type="password" name="password" id="password" placeholder="Masukkan Password">
+							<?= form_error('password', '<div class="invalid-feedback font-weight-bold pl-1">', '</div>') ?>
 						</div>
-						<?= form_error('password', '<div class="invalid-feedback font-weight-bold pl-1">', '</div>') ?>
 					</div>
-					<div class="input-group mb-3">
-						<input type="password" name="password_confirm" id="password_confirm" class="form-control <?= form_error('password_confirm') ? 'is-invalid' : ''; ?>" placeholder="Konfirmasi Password">
-						<div class="input-group-append">
-							<div class="input-group-text">
-								<span class="fas fa-lock"></span>
-							</div>
+					<div class="form-group">
+						<div class="col-12">
+							<label for="password_confirm">Konfirmasi Password</label>
+							<input class="form-control <?= form_error("password_confirm") ? "is-invalid" : ""; ?>" type="password" name="password_confirm" id="password" placeholder="Masukkan Password">
+							<?= form_error('password_confirm', '<div class="invalid-feedback font-weight-bold pl-1">', '</div>') ?>
 						</div>
-						<?= form_error('password_confirm', '<div class="invalid-feedback font-weight-bold pl-1">', '</div>') ?>
 					</div>
-					<hr>
-					<div class="input-group mb-3">
-						<button type="submit" class="btn btn-primary btn-block">Register</button>
+
+					<div class="form-group text-center m-t-20">
+						<div class="col-12">
+							<button class="btn btn-primary btn-block btn-lg waves-effect waves-light" type="submit">Register</button>
+						</div>
+					</div>
+
+					<div class="form-group m-t-10 m-b-0 text-center">
+						<span>Sudah Punya Akun?</span>
+						<a href="<?= base_url("register") ?>" class="text-muted">Login Disini</a>
 					</div>
 				</form>
-				<hr>
-				<div class="text-center">
-					<p class="mb-1 small">
-						Sudah punya akun ? <a href="forgot-password.html">Login</a>
-					</p>
-				</div>
 			</div>
-			<!-- /.login-card-body -->
+
 		</div>
 	</div>
-	<!-- /.login-box -->
+	<!-- END wrapper -->
 
 	<!-- scripts -->
 	<?php $this->load->view("components/auth/_scripts"); ?>
 	<!-- end of scripts -->
+
 </body>
 
 </html>

@@ -1,118 +1,137 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <!-- head -->
 <?php $this->load->view("components/backend/_head"); ?>
 <!-- end of head -->
 
-<body class="hold-transition sidebar-mini layout-fixed">
-	<div class="wrapper">
+<body>
 
-		<!-- Navbar -->
+	<!-- Begin page -->
+	<div id="wrapper">
+
+		<!-- topbar -->
 		<?php $this->load->view("components/backend/_topbar"); ?>
-		<!-- /.navbar -->
+		<!-- end of topbar -->
 
-		<!-- Main Sidebar Container -->
+		<!-- sidebar -->
 		<?php $this->load->view("components/backend/_sidebar"); ?>
+		<!-- end of sidebar -->
 
-		<!-- Content Wrapper. Contains page content -->
-		<div class="content-wrapper">
-			<!-- Content Header (Page header) -->
-			<div class="content-header">
+		<!-- ============================================================== -->
+		<!-- Start right Content here -->
+		<!-- ============================================================== -->
+		<div class="content-page">
+			<!-- Start content -->
+			<div class="content">
 				<div class="container-fluid">
-					<div class="row mb-2">
-						<div class="col-sm-6">
-							<h1 class="m-0 text-dark">Dashboard</h1>
-						</div><!-- /.col -->
-					</div><!-- /.row -->
-				</div><!-- /.container-fluid -->
-			</div>
-			<!-- /.content-header -->
-
-			<!-- Main content -->
-			<section class="content">
-				<div class="container-fluid">
-					<!-- Small boxes (Stat box) -->
-					<div class="row">
-						<div class="col-lg-3 col-6">
-							<!-- small box -->
-							<div class="small-box bg-info">
-								<div class="inner">
-									<h3>150</h3>
-
-									<p>New Orders</p>
-								</div>
-								<div class="icon">
-									<i class="ion ion-bag"></i>
-								</div>
-								<a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+					<div class="page-title-box">
+						<div class="row align-items-center">
+							<div class="col-sm-6">
+								<h4 class="page-title">Dashboard</h4>
 							</div>
 						</div>
-						<!-- ./col -->
-						<div class="col-lg-3 col-6">
-							<!-- small box -->
-							<div class="small-box bg-success">
-								<div class="inner">
-									<h3>53<sup style="font-size: 20px">%</sup></h3>
-
-									<p>Bounce Rate</p>
-								</div>
-								<div class="icon">
-									<i class="ion ion-stats-bars"></i>
-								</div>
-								<a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-							</div>
-						</div>
-						<!-- ./col -->
-						<div class="col-lg-3 col-6">
-							<!-- small box -->
-							<div class="small-box bg-warning">
-								<div class="inner">
-									<h3>44</h3>
-
-									<p>User Registrations</p>
-								</div>
-								<div class="icon">
-									<i class="ion ion-person-add"></i>
-								</div>
-								<a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-							</div>
-						</div>
-						<!-- ./col -->
-						<div class="col-lg-3 col-6">
-							<!-- small box -->
-							<div class="small-box bg-danger">
-								<div class="inner">
-									<h3>65</h3>
-
-									<p>Unique Visitors</p>
-								</div>
-								<div class="icon">
-									<i class="ion ion-pie-graph"></i>
-								</div>
-								<a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-							</div>
-						</div>
-						<!-- ./col -->
+						<!-- end row -->
 					</div>
-					<!-- /.row -->
-				</div><!-- /.container-fluid -->
-			</section>
-			<!-- /.content -->
+					<!-- end page-title -->
+
+					<div class="row">
+
+						<div class="col-sm-6 col-xl-3">
+							<div class="card">
+								<div class="card-heading p-4">
+									<div class="mini-stat-icon float-right">
+										<i class="mdi mdi-cube-outline bg-primary  text-white"></i>
+									</div>
+									<div>
+										<h5 class="font-16">Active Sessions</h5>
+									</div>
+									<h3 class="mt-4">43,225</h3>
+									<div class="progress mt-4" style="height: 4px;">
+										<div class="progress-bar bg-primary" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+									</div>
+									<p class="text-muted mt-2 mb-0">Previous period<span class="float-right">75%</span>
+									</p>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-sm-6 col-xl-3">
+							<div class="card">
+								<div class="card-heading p-4">
+									<div class="mini-stat-icon float-right">
+										<i class="mdi mdi-briefcase-check bg-success text-white"></i>
+									</div>
+									<div>
+										<h5 class="font-16">Total Revenue</h5>
+									</div>
+									<h3 class="mt-4">$73,265</h3>
+									<div class="progress mt-4" style="height: 4px;">
+										<div class="progress-bar bg-success" role="progressbar" style="width: 88%" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100"></div>
+									</div>
+									<p class="text-muted mt-2 mb-0">Previous period<span class="float-right">88%</span>
+									</p>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-sm-6 col-xl-3">
+							<div class="card">
+								<div class="card-heading p-4">
+									<div class="mini-stat-icon float-right">
+										<i class="mdi mdi-tag-text-outline bg-warning text-white"></i>
+									</div>
+									<div>
+										<h5 class="font-16">Average Price</h5>
+									</div>
+									<h3 class="mt-4">447</h3>
+									<div class="progress mt-4" style="height: 4px;">
+										<div class="progress-bar bg-warning" role="progressbar" style="width: 68%" aria-valuenow="68" aria-valuemin="0" aria-valuemax="100"></div>
+									</div>
+									<p class="text-muted mt-2 mb-0">Previous period<span class="float-right">68%</span>
+									</p>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-sm-6 col-xl-3">
+							<div class="card">
+								<div class="card-heading p-4">
+									<div class="mini-stat-icon float-right">
+										<i class="mdi mdi-buffer bg-danger text-white"></i>
+									</div>
+									<div>
+										<h5 class="font-16">Add to Card</h5>
+									</div>
+									<h3 class="mt-4">86%</h3>
+									<div class="progress mt-4" style="height: 4px;">
+										<div class="progress-bar bg-danger" role="progressbar" style="width: 82%" aria-valuenow="82" aria-valuemin="0" aria-valuemax="100"></div>
+									</div>
+									<p class="text-muted mt-2 mb-0">Previous period<span class="float-right">82%</span>
+									</p>
+								</div>
+							</div>
+						</div>
+
+					</div>
+
+				</div>
+				<!-- container-fluid -->
+
+			</div>
+			<!-- content -->
+
+			<!-- footer -->
+			<?php $this->load->view("components/backend/_footer"); ?>
+			<!-- end of footer -->
+
 		</div>
-		<!-- /.content-wrapper -->
+		<!-- ============================================================== -->
+		<!-- End Right content here -->
+		<!-- ============================================================== -->
 
-		<!-- footer -->
-		<?php $this->load->view("components/backend/_footer"); ?>
-		<!-- end of footer -->
-
-		<!-- Control Sidebar -->
-		<aside class="control-sidebar control-sidebar-dark">
-			<!-- Control sidebar content goes here -->
-		</aside>
-		<!-- /.control-sidebar -->
 	</div>
-	<!-- ./wrapper -->
+	<!-- END wrapper -->
 
 	<!-- scripts -->
 	<?php $this->load->view("components/backend/_scripts"); ?>

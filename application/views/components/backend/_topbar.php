@@ -1,109 +1,56 @@
-<nav class="main-header navbar navbar-expand navbar-white navbar-light">
-	<!-- Left navbar links -->
-	<ul class="navbar-nav">
-		<li class="nav-item">
-			<a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
-		</li>
-	</ul>
+<!-- Top Bar Start -->
+<div class="topbar">
 
-	<!-- SEARCH FORM -->
-	<form class="form-inline ml-3">
-		<div class="input-group input-group-sm">
-			<input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
-			<div class="input-group-append">
-				<button class="btn btn-navbar" type="submit">
-					<i class="fas fa-search"></i>
+	<!-- LOGO -->
+	<div class="topbar-left">
+		<a href="index.html" class="logo">
+			<span class="logo-light">
+				Ral T&T Travel
+			</span>
+			<span class="logo-sm">
+				R
+			</span>
+		</a>
+	</div>
+
+	<nav class="navbar-custom">
+		<ul class="navbar-right list-inline float-right mb-0">
+			<li class="dropdown notification-list list-inline-item">
+				<div class="dropdown notification-list nav-pro-img">
+					<a class="dropdown-toggle nav-link arrow-none waves-effect nav-user" data-toggle="dropdown" href="index.html#" role="button" aria-haspopup="false" aria-expanded="false">
+						<img src="<?= base_url("assets/uploads/avatars/" . $this->session->userdata("avatar")) ?>" class="rounded-circle">
+						<span><?= $this->session->userdata("name"); ?></span>
+					</a>
+					<div class="dropdown-menu dropdown-menu-right profile-dropdown ">
+						<!-- item-->
+						<a class="dropdown-item" href="index.html#"><i class="mdi mdi-account-circle"></i>
+							Profile</a>
+						<a class="dropdown-item d-block" href="index.html#"><i class="mdi mdi-settings"></i> Settings</a>
+						<div class="dropdown-divider"></div>
+						<a class="dropdown-item text-danger" href="<?= base_url("logout") ?>"><i class="mdi mdi-power text-danger"></i> Logout</a>
+					</div>
+				</div>
+			</li>
+
+		</ul>
+
+		<ul class="list-inline menu-left mb-0">
+			<li class="float-left">
+				<button class="button-menu-mobile open-left waves-effect">
+					<i class="mdi mdi-menu"></i>
 				</button>
-			</div>
-		</div>
-	</form>
+			</li>
+			<li class="d-none d-md-inline-block">
+				<form role="search" class="app-search">
+					<div class="form-group mb-0">
+						<input type="text" class="form-control" placeholder="Search..">
+						<button type="submit"><i class="fa fa-search"></i></button>
+					</div>
+				</form>
+			</li>
+		</ul>
 
-	<!-- Right navbar links -->
-	<ul class="navbar-nav ml-auto">
-		<!-- Messages Dropdown Menu -->
-		<li class="nav-item dropdown">
-			<a class="nav-link" data-toggle="dropdown" href="#">
-				<i class="far fa-comments"></i>
-				<span class="badge badge-danger navbar-badge">3</span>
-			</a>
-			<div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-				<a href="#" class="dropdown-item">
-					<!-- Message Start -->
-					<div class="media">
-						<img src="assets/backend/dist/img/user1-128x128.jpg" alt="User Avatar" class="img-size-50 mr-3 img-circle">
-						<div class="media-body">
-							<h3 class="dropdown-item-title">
-								Brad Diesel
-								<span class="float-right text-sm text-danger"><i class="fas fa-star"></i></span>
-							</h3>
-							<p class="text-sm">Call me whenever you can...</p>
-							<p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
-						</div>
-					</div>
-					<!-- Message End -->
-				</a>
-				<div class="dropdown-divider"></div>
-				<a href="#" class="dropdown-item">
-					<!-- Message Start -->
-					<div class="media">
-						<img src="assets/backend/dist/img/user8-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3">
-						<div class="media-body">
-							<h3 class="dropdown-item-title">
-								John Pierce
-								<span class="float-right text-sm text-muted"><i class="fas fa-star"></i></span>
-							</h3>
-							<p class="text-sm">I got your message bro</p>
-							<p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
-						</div>
-					</div>
-					<!-- Message End -->
-				</a>
-				<div class="dropdown-divider"></div>
-				<a href="#" class="dropdown-item">
-					<!-- Message Start -->
-					<div class="media">
-						<img src="assets/backend/dist/img/user3-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3">
-						<div class="media-body">
-							<h3 class="dropdown-item-title">
-								Nora Silvester
-								<span class="float-right text-sm text-warning"><i class="fas fa-star"></i></span>
-							</h3>
-							<p class="text-sm">The subject goes here</p>
-							<p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
-						</div>
-					</div>
-					<!-- Message End -->
-				</a>
-				<div class="dropdown-divider"></div>
-				<a href="#" class="dropdown-item dropdown-footer">See All Messages</a>
-			</div>
-		</li>
-		<!-- Notifications Dropdown Menu -->
-		<li class="nav-item dropdown">
-			<a class="nav-link" data-toggle="dropdown" href="#">
-				<i class="far fa-bell"></i>
-				<span class="badge badge-warning navbar-badge">15</span>
-			</a>
-			<div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-				<span class="dropdown-item dropdown-header">15 Notifications</span>
-				<div class="dropdown-divider"></div>
-				<a href="#" class="dropdown-item">
-					<i class="fas fa-envelope mr-2"></i> 4 new messages
-					<span class="float-right text-muted text-sm">3 mins</span>
-				</a>
-				<div class="dropdown-divider"></div>
-				<a href="#" class="dropdown-item">
-					<i class="fas fa-users mr-2"></i> 8 friend requests
-					<span class="float-right text-muted text-sm">12 hours</span>
-				</a>
-				<div class="dropdown-divider"></div>
-				<a href="#" class="dropdown-item">
-					<i class="fas fa-file mr-2"></i> 3 new reports
-					<span class="float-right text-muted text-sm">2 days</span>
-				</a>
-				<div class="dropdown-divider"></div>
-				<a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
-			</div>
-		</li>
-	</ul>
-</nav>
+	</nav>
+
+</div>
+<!-- Top Bar End -->
