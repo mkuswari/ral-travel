@@ -18,19 +18,19 @@
 
 				<li>
 					<a href="<?= base_url("kelola-users") ?>" class="waves-effect">
-						<i class="icon-accelerator"></i><span> Kelola Users
+						<i class="fas fa-users"></i><span> Kelola Users
 						</span>
 					</a>
 				</li>
 
-				<!-- <li>
+				<li>
 					<a href="javascript:void(0);" class="waves-effect"><i class="icon-pencil-ruler"></i> <span>
-							UI Elements <span class="float-right menu-arrow"><i class="mdi mdi-chevron-right"></i></span> </span> </a>
+							Kelola Destinasi <span class="float-right menu-arrow"><i class="mdi mdi-chevron-right"></i></span> </span> </a>
 					<ul class="submenu">
-						<li><a href="ui-alerts.html">Alerts</a></li>
-						<li><a href="ui-badge.html">Badge</a></li>
+						<li><a href="<?= base_url("kelola-kategori") ?>">Kategori</a></li>
+						<li><a href="ui-badge.html">Destinasi</a></li>
 					</ul>
-				</li> -->
+				</li>
 
 			</ul>
 

@@ -20,3 +20,7 @@ $route["kelola-users"] = "user";
 $route["kelola-users/tambah"] = "user/create";
 $route["kelola-users/hapus/(:num)"] = "user/delete/$1";
 $route["kelola-users/update/(:num)"] = "user/update/$1";
+// destinations categories management
+$route['kelola-kategori'] = 'category';
+// $route['kelola-kategori/ajaxlist'] = 'category/ajaxlist';
+// $route['kelola-kategori/ajaxadd'] = 'category/ajaxadd';
