@@ -5,7 +5,7 @@
 
 	$(document).ready(function() {
 		//datatables
-		table = $('#tablePackages').DataTable({
+		table = $('#tableCategories').DataTable({
 
 			"processing": true, //Feature control the processing indicator.
 			"serverSide": true, //Feature control DataTables' server-side processing mode.
@@ -13,7 +13,7 @@
 
 			// Load data for the table's content from an Ajax source
 			"ajax": {
-				"url": "<?= base_url('paket-grooming/ajaxlist') ?>",
+				"url": "<?= base_url('category/ajaxlist') ?>",
 				"type": "POST"
 			},
 
@@ -38,7 +38,7 @@
 
 	});
 
-	function addPackage() {
+	function addCategory() {
 		saveMethod = 'add';
 		$('#form')[0].reset(); // reset form on modals
 		$('.form-control').removeClass('is-invalid'); // clear error class
@@ -48,7 +48,7 @@
 
 	}
 
-	function editPackage(id) {
+	function editCategory(id) {
 		saveMethod = 'update';
 		$('#form')[0].reset(); // reset form on modals
 		$('.form-control').removeClass('is-invalid'); // clear error class
@@ -56,16 +56,13 @@
 
 		// load data from ajax
 		$.ajax({
-			url: "<?= base_url('paket-grooming/ajaxedit') ?>/" + id,
+			url: "<?= base_url('category/ajaxedit') ?>/" + id,
 			type: "GET",
 			dataType: "JSON",
 			success: function(data) {
-				$('[name="package_id"]').val(data.package_id);
+				$('[name="id"]').val(data.id);
 				$('[name="name"]').val(data.name);
 				$('[name="slug"]').val(data.slug);
-				$('[name="description"]').val(data.description);
-				$('[name="cost_for_cat"]').val(data.cost_for_cat);
-				$('[name="cost_for_dog"]').val(data.cost_for_dog);
 				$('#modal_form').modal('show'); // show bootstrap modal
 				$('.modal-title').text('Ubah Paket Grooming'); // Set Title to Bootstrap modal title
 
@@ -90,9 +87,9 @@
 		let url;
 
 		if (saveMethod == 'add') {
-			url = "<?= base_url('paket-grooming/ajaxadd') ?>";
+			url = "<?= base_url('category/ajaxadd') ?>";
 		} else {
-			url = "<?= base_url('paket-grooming/ajaxupdate') ?>";
+			url = "<?= base_url('category/ajaxupdate') ?>";
 		}
 
 		// ajax adding data to database
@@ -144,11 +141,12 @@
 
 			},
 			error: function(jqXHR, textStatus, errorThrown) {
-				swal({
-					title: 'Gagal',
-					text: 'Kategori gagal ditambahkan',
-					icon: 'error'
-				});
+				alert('Gagal menambahkan data');
+				// swal({
+				// 	title: 'Gagal',
+				// 	text: 'Kategori gagal ditambahkan',
+				// 	icon: 'error'
+				// });
 				$('#btnSave').text('Simpan'); //change button text
 				$('#btnSave').attr('disabled', false); //set button enable 
 
@@ -156,7 +154,7 @@
 		});
 	}
 
-	function deletePackage(id) {
+	function deleteCategory(id) {
 		swal({
 			title: "Anda yakin?",
 			text: "Data Kategori akan dihapus!",
@@ -166,7 +164,7 @@
 		}).then((result) => {
 			if (result) {
 				$.ajax({
-					url: "<?= base_url('paket-grooming/ajaxdelete') ?>/" + id,
+					url: "<?= base_url('category/ajaxdelete') ?>/" + id,
 					type: "POST",
 					dataType: "JSON",
 					success: function(data) {

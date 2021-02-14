@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Package extends CI_Controller
+class Category extends CI_Controller
 {
 	public function __construct()
 	{
@@ -28,8 +28,7 @@ class Package extends CI_Controller
 			$row[] = $i++;
 			$row[] = $category->name;
 			$row[] = $category->slug;
-			$row[] = $category->created_at;
-			$row[] = $category->updated_at;
+			$row[] = date('d F Y', strtotime($category->created_at));
 
 			$row[] = '<a class="btn btn-icon btn-warning" href="javascript:void(0)" title="Edit" onclick="editCategory(' . "'" . $category->id . 			"'" . ')"><i class="fas fa-edit"></i></a>
 				  <a class="btn btn-icon btn-danger" href="javascript:void(0)" title="Hapus" onclick="deleteCategory(' . "'" . $category->id . "'" . ')"><i class="fas fa-trash"></i></a>';
