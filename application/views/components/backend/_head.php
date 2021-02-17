@@ -1,18 +1,19 @@
 <head>
-	<meta charset="utf-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
-	<title>Ral Travel - <?= $title; ?></title>
-	<meta content="Responsive admin theme build on top of Bootstrap 4" name="description" />
-	<meta content="Themesdesign" name="author" />
-	<link rel="shortcut icon" href="<?= base_url("assets/backend/assets/images/favicon.ico") ?>">
+	<meta charset="UTF-8">
+	<meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
+	<title>Ral T&T Travel Agency | <?= $title; ?></title>
 
-	<!--Morris Chart CSS -->
-	<link rel="stylesheet" href="<?= base_url("assets/backend/plugins/morris/morris.css") ?>">
+	<!-- General CSS Files -->
+	<link rel="stylesheet" href="<?= base_url("assets/backend/modules/bootstrap/css/bootstrap.min.css") ?>">
+	<link rel="stylesheet" href="<?= base_url("assets/backend/modules/fontawesome/css/all.min.css") ?>">
 
-	<link href="<?= base_url("assets/backend/assets/css/bootstrap.min.css") ?>" rel="stylesheet" type="text/css">
-	<link href="<?= base_url("assets/backend/assets/css/metismenu.min.css") ?>" rel="stylesheet" type="text/css">
-	<link href="<?= base_url("assets/backend/assets/css/icons.css") ?>" rel="stylesheet" type="text/css">
-	<link href="<?= base_url("assets/backend/assets/css/style.css") ?>" rel="stylesheet" type="text/css">
+	<!-- CSS Libraries -->
+	<link rel="stylesheet" href="<?= base_url("assets/backend/modules/jqvmap/dist/jqvmap.min.css") ?>">
+	<link rel="stylesheet" href="<?= base_url("assets/backend/modules/weather-icon/css/weather-icons.min.css") ?>">
+	<link rel="stylesheet" href="<?= base_url("assets/backend/modules/weather-icon/css/weather-icons-wind.min.css") ?>">
+	<link rel="stylesheet" href="<?= base_url("assets/backend/modules/summernote/summernote-bs4.css") ?>">
 
+	<!-- Template CSS -->
+	<link rel="stylesheet" href="<?= base_url("assets/backend/css/style.css") ?>">
+	<link rel="stylesheet" href="<?= base_url("assets/backend/css/components.css") ?>">
 </head>

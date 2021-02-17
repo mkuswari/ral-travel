@@ -1,15 +1,23 @@
-<!-- jQuery  -->
-<script src="<?= base_url("assets/backend/assets/js/jquery.min.js") ?>"></script>
-<script src="<?= base_url("assets/backend/assets/js/bootstrap.bundle.min.js") ?>"></script>
-<script src="<?= base_url("assets/backend/assets/js/metismenu.min.js") ?>"></script>
-<script src="<?= base_url("assets/backend/assets/js/jquery.slimscroll.js") ?>"></script>
-<script src="<?= base_url("assets/backend/assets/js/waves.min.js") ?>"></script>
+<!-- General JS Scripts -->
+<script src="<?= base_url("assets/backend/modules/jquery.min.js") ?>"></script>
+<script src="<?= base_url("assets/backend/modules/popper.js") ?>"></script>
+<script src="<?= base_url("assets/backend/modules/tooltip.js") ?>"></script>
+<script src="<?= base_url("assets/backend/modules/bootstrap/js/bootstrap.min.js") ?>"></script>
+<script src="<?= base_url("assets/backend/modules/nicescroll/jquery.nicescroll.min.js") ?>"></script>
+<script src="<?= base_url("assets/backend/modules/moment.min.js") ?>"></script>
+<script src="<?= base_url("assets/backend/js/stisla.js") ?>"></script>
 
-<!--Morris Chart-->
-<script src="<?= base_url("assets/backend/plugins/morris/morris.min.js") ?>"></script>
-<script src="<?= base_url("assets/backend/plugins/raphael/raphael.min.js") ?>"></script>
+<!-- JS Libraies -->
+<script src="<?= base_url("assets/backend/modules/simple-weather/jquery.simpleWeather.min.js") ?>"></script>
+<script src="<?= base_url("assets/backend/modules/chart.min.js") ?>"></script>
+<script src="<?= base_url("assets/backend/modules/jqvmap/dist/jquery.vmap.min.js") ?>"></script>
+<script src="<?= base_url("assets/backend/modules/jqvmap/dist/maps/jquery.vmap.world.js") ?>"></script>
+<script src="<?= base_url("assets/backend/modules/summernote/summernote-bs4.js") ?>"></script>
+<script src="<?= base_url("assets/backend/modules/chocolat/dist/js/jquery.chocolat.min.js") ?>"></script>
 
-<script src="<?= base_url("assets/backend/assets/pages/dashboard.init.js") ?>"></script>
+<!-- Page Specific JS File -->
+<script src="<?= base_url("assets/backend/js/page/index-0.js") ?>"></script>
 
-<!-- App js -->
-<script src="<?= base_url("assets/backend/assets/js/app.js") ?>"></script>
+<!-- Template JS File -->
+<script src="<?= base_url("assets/backend/js/scripts.js") ?>"></script>
+<script src="<?= base_url("assets/backend/js/custom.js") ?>"></script>

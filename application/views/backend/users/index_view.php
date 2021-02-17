@@ -44,12 +44,13 @@
 					</div>
 					<!-- end page-title -->
 
+					<!-- sweet alert flashdata -->
+					<div class="flash-data" data-flashdata="<?= $this->session->flashdata('message'); ?>"></div>
+					<!-- end of sweet alert flashdata -->
+
 
 					<div class="row">
 						<div class="col-12">
-
-							<?= $this->session->flashdata('message') ?>
-
 							<div class="card">
 								<div class="card-body">
 									<table id="datatable" class="table table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing:0; width:100%;">
@@ -86,7 +87,7 @@
 													</td>
 													<td>
 														<a href="<?= base_url("kelola-users/update/" . $user["id"]) ?>" class="btn btn-warning"><i class="mdi mdi-pencil"></i></a>
-														<a href="<?= base_url("kelola-users/hapus/" . $user["id"]) ?>" class="btn btn-danger" onclick="return confirm('Hapus User dari Sistem?')"><i class="mdi mdi-trash-can"></i></a>
+														<a href="<?= base_url("kelola-users/hapus/" . $user["id"]) ?>" class="btn btn-danger btn-delete"><i class="mdi mdi-trash-can"></i></a>
 													</td>
 												</tr>
 											<?php endforeach; ?>
@@ -125,6 +126,9 @@
 	<script src="<?= base_url("assets/backend/plugins/datatables/responsive.bootstrap4.min.js") ?>"></script>
 	<script src="<?= base_url("assets/backend/assets/pages/datatables.init.js") ?>"></script>
 	<!-- end of datatables -->
+	<!-- sweet alert -->
+	<?php $this->load->view("backend/users/_sweet_alert"); ?>
+	<!-- end of sweet alert -->
 </body>
 
 </html>

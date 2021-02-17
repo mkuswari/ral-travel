@@ -55,7 +55,7 @@ class User extends CI_Controller
 			];
 
 			$this->User_model->insertUserData($userData);
-			$this->session->set_flashdata('message', '<div class="alert alert-success">Data User berhasil ditambahkan</div>');
+			$this->session->set_flashdata('message', 'Ditambah');
 			redirect('kelola-users');
 		}
 	}
@@ -105,7 +105,7 @@ class User extends CI_Controller
 			];
 
 			$this->User_model->updateUserData($userData);
-			$this->session->set_flashdata('message', '<div class="alert alert-success">Data User berhasil diupdate</div>');
+			$this->session->set_flashdata('message', 'Diubah');
 			redirect('kelola-users');
 		}
 	}
@@ -117,7 +117,7 @@ class User extends CI_Controller
 			unlink('./assets/uploads/avatars/' . $user["avatar"]);
 		}
 		$this->User_model->deleteUserData($id);
-		$this->session->set_flashdata('message', '<div class="alert alert-success">Data User berhasil Dihapus</div>');
+		$this->session->set_flashdata('message', 'Dihapus');
 		redirect('kelola-users');
 	}
 
