@@ -110,6 +110,7 @@ class User extends CI_Controller
 		}
 	}
 
+
 	public function delete($id)
 	{
 		$user = $this->User_model->getUserById($id);

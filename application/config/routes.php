@@ -24,8 +24,8 @@ $route["dashboard"] = "dashboard";
 // users management routes
 $route["kelola-users"] = "user";
 $route["kelola-users/tambah"] = "user/create";
-$route["kelola-users/hapus/(:num)"] = "user/delete/$1";
 $route["kelola-users/update/(:num)"] = "user/update/$1";
+$route["kelola-users/hapus/(:num)"] = "user/delete/$1";
 // packages categories management route
 $route['kelola-kategori'] = 'category';
 // travel destinations routes
