@@ -19,8 +19,7 @@
 			<div class="main-content">
 				<section class="section">
 					<div class="section-header d-flex justify-content-between">
-						<h1>Kelola Users</h1>
-						<a href="<?= base_url("kelola-users/tambah") ?>" class="btn btn-primary">Tambah User</a>
+						<h1>Tambah Users</h1>
 					</div>
 					<div class="section-body">
 						<div class="row">

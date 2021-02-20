@@ -8,4 +8,14 @@ class Destination_model extends CI_Model
 	{
 		return $this->db->get("destinations")->result_array();
 	}
+
+	public function getDestinationById($id)
+	{
+		return $this->db->get_where("destinations", ["id" => $id])->row_array();
+	}
+
+	public function insertNewDestination($destinationData)
+	{
+		$this->db->insert("destinations", $destinationData);
+	}
 }

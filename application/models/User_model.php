@@ -9,7 +9,7 @@ class User_model extends CI_Model
 
 	public function getUserById($id)
 	{
-		return $this->db->get_where("users", ["id" => $id])->row_array();
+		return $this->db->get_where("users", ["user_id" => $id])->row_array();
 	}
 
 	public function insertUserData($userData)
@@ -25,13 +25,13 @@ class User_model extends CI_Model
 		$this->db->set("address", $userData["address"]);
 		$this->db->set("avatar", $userData["avatar"]);
 		$this->db->set("role", $userData["role"]);
-		$this->db->where("id", $this->input->post("id"));
+		$this->db->where("user_id", $this->input->post("user_id"));
 		$this->db->update("users", $userData);
 	}
 
 	public function deleteUserData($id)
 	{
-		$this->db->where("id", $id);
+		$this->db->where("user_id", $id);
 		$this->db->delete("users");
 	}
 }

@@ -68,8 +68,8 @@
 															</td>
 															<td><?= date('d F Y', strtotime($user["created_at"])) ?></td>
 															<td>
-																<a href="<?= base_url("kelola-users/update/" . $user["id"]) ?>" class="btn btn-warning btn-icon"><i class="fas fa-pencil-alt"></i></a>
-																<a href="<?= base_url("kelola-users/delete/" . $user["id"]) ?>" class="btn btn-danger btn-icon btn-delete"><i class="fas fa-trash"></i></a>
+																<a href="<?= base_url("kelola-users/update/" . $user["user_id"]) ?>" class="btn btn-warning btn-icon"><i class="fas fa-pencil-alt"></i></a>
+																<a href="<?= base_url("kelola-users/hapus/" . $user["user_id"]) ?>" class="btn btn-danger btn-icon btn-delete"><i class="fas fa-trash"></i></a>
 															</td>
 														</tr>
 													<?php endforeach; ?>

@@ -5,106 +5,77 @@
 <?php $this->load->view("components/backend/_head"); ?>
 <!-- end of head -->
 
-<link href="<?= base_url("assets/backend/plugins/summernote/summernote-bs4.css") ?>" rel="stylesheet" />
-
 <body>
+	<div id="app">
+		<div class="main-wrapper main-wrapper-1">
+			<!-- navbar -->
+			<?php $this->load->view("components/backend/_navbar"); ?>
+			<!-- end of navbar -->
+			<!-- sidebar -->
+			<?php $this->load->view("components/backend/_sidebar"); ?>
+			<!-- end of sidebar -->
 
-	<!-- Begin page -->
-	<div id="wrapper">
-
-		<!-- topbar -->
-		<?php $this->load->view("components/backend/_topbar"); ?>
-		<!-- end of topbar -->
-
-		<!-- sidebar -->
-		<?php $this->load->view("components/backend/_sidebar"); ?>
-		<!-- end of sidebar -->
-
-		<!-- ============================================================== -->
-		<!-- Start right Content here -->
-		<!-- ============================================================== -->
-		<div class="content-page">
-			<!-- Start content -->
-			<div class="content">
-				<div class="container-fluid">
-					<div class="page-title-box">
-						<div class="row justify-content-between">
-							<div class="col-auto">
-								<h4 class="page-title">Tambah Destinasi Wisata</h4>
-							</div>
-						</div>
-						<!-- end row -->
+			<!-- Main Content -->
+			<div class="main-content">
+				<section class="section">
+					<div class="section-header d-flex justify-content-between">
+						<h1>Tambah Destinasi</h1>
 					</div>
-					<!-- end page-title -->
-
-
-					<div class="row">
-						<div class="col-12">
-							<div class="card">
-								<div class="card-body">
-									<div class="row">
-										<div class="col-sm-7 mx-auto">
-											<form action="<?= base_url("kelola-users/tambah") ?>" method="post" enctype="multipart/form-data">
-												<div class="form-group row">
-													<label for="name" class="col-sm-2 col-form-label">Nama Destinasi</label>
-													<div class="col-sm-10">
-														<input type="text" class="form-control <?= form_error('name') ? 'is-invalid' : ''; ?>" name="name" id="name">
-														<?= form_error('name', '<div class="invalid-feedback font-weight-bold pl-1">', '</div>') ?>
-													</div>
-												</div>
-												<div class="form-group row">
-													<label for="image" class="col-sm-2 col-form-label">Image</label>
-													<div class="col-sm-10">
-														<input type="file" class="form-control" name="image" id="image">
-													</div>
-												</div>
-												<div class="form-group row">
-													<label for="description" class="col-sm-2 col-form-label">Deskripsi</label>
-													<div class="col-sm-10">
-														<div class="summernote">
-
+					<div class="section-body">
+						<div class="row">
+							<div class="col-12">
+								<div class="card">
+									<div class="card-body">
+										<div class="row">
+											<div class="col-sm-8 mx-auto">
+												<form action="<?= base_url("kelola-destinasi/tambah") ?>" method="post" enctype="multipart/form-data">
+													<div class="form-group row">
+														<label for="name" class="col-sm-2 col-form-label">Nama</label>
+														<div class="col-sm-10">
+															<input type="text" class="form-control <?= form_error('name') ? 'is-invalid' : ''; ?>" name="name" id="name">
+															<?= form_error('name', '<div class="invalid-feedback font-weight-bold pl-1">', '</div>') ?>
 														</div>
 													</div>
-												</div>
-												<div class="form-group row">
-													<div class="col-sm-2"></div>
-													<div class="col-sm-10">
-														<button type="submit" class="btn btn-primary">Tambah User</button>
-														<button type="reset" class="btn btn-warning text-white">Reset Form</button>
+													<div class="form-group row">
+														<label for="images" class="col-sm-2 col-form-label">Images</label>
+														<div class="col-sm-10">
+															<input type="file" class="form-control <?= form_error('images') ? 'is-invalid' : '' ?>" name="images" id="images">
+															<?= form_error('images', '<div class="invalid-feedback font-weight-bold pl-1">', '</div>') ?>
+														</div>
 													</div>
-												</div>
-											</form>
+													<div class="form-group row">
+														<label for="description" class="col-sm-2 col-form-label">Deskripsi</label>
+														<div class="col-sm-10">
+															<textarea class="summernote-simple" id="description" name="description"></textarea>
+															<?= form_error('description', '<div class="invalid-feedback font-weight-bold pl-1">', '</div>') ?>
+														</div>
+													</div>
+													<div class="form-group row">
+														<div class="col-sm-2"></div>
+														<div class="col-sm-10">
+															<button type="submit" class="btn btn-primary">Tambah Destinasi</button>
+															<button type="reset" class="btn btn-warning text-white">Reset Form</button>
+														</div>
+													</div>
+												</form>
+											</div>
 										</div>
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
-
-				</div>
-				<!-- container-fluid -->
-
+				</section>
 			</div>
-			<!-- content -->
-
 			<!-- footer -->
 			<?php $this->load->view("components/backend/_footer"); ?>
 			<!-- end of footer -->
-
 		</div>
-		<!-- ============================================================== -->
-		<!-- End Right content here -->
-		<!-- ============================================================== -->
-
 	</div>
-	<!-- END wrapper -->
 
 	<!-- scripts -->
 	<?php $this->load->view("components/backend/_scripts"); ?>
 	<!-- end of scripts -->
-	<!-- summernote -->
-	<script src="<?= base_url("assets/backend/plugins/summernote/summernote-bs4.min.js") ?>"></script>
-	<!-- end of summernote -->
 </body>
 
 </html>

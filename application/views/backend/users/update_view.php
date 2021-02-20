@@ -19,8 +19,7 @@
 			<div class="main-content">
 				<section class="section">
 					<div class="section-header d-flex justify-content-between">
-						<h1>Kelola Users</h1>
-						<a href="<?= base_url("kelola-users/tambah") ?>" class="btn btn-primary">Tambah User</a>
+						<h1>Update User</h1>
 					</div>
 					<div class="section-body">
 						<div class="row">
@@ -33,8 +32,8 @@
 													<img src="<?= base_url("assets/uploads/avatars/" . $user["avatar"]) ?>" width="200px;" height="200px;" style="object-fit: cover; object-position: center;" class="rounded-circle shadow">
 												</div>
 												<hr>
-												<form action="<?= base_url("kelola-users/update/" . $user["id"]) ?>" method="post" enctype="multipart/form-data">
-													<input type="hidden" name="id" id="id" value="<?= $user["id"] ?>">
+												<form action="<?= base_url("kelola-users/update/" . $user["user_id"]) ?>" method="post" enctype="multipart/form-data">
+													<input type="hidden" name="id" id="id" value="<?= $user["user_id"] ?>">
 													<div class="form-group row">
 														<label for="name" class="col-sm-2 col-form-label">Nama</label>
 														<div class="col-sm-10">
