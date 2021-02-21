@@ -19,6 +19,25 @@
 				<a href="<?= base_url("kelola-wisata") ?>" class="nav-link"><i class="fas fa-umbrella-beach"></i> <span>Kelola Wisata</span></a>
 			</li>
 			<li>
+				<a href="" class="nav-link"><i class="fas fa-credit-card"></i> <span>Kelola Booking</span></a>
+			</li>
+			<li>
+				<a href="" class="nav-link"><i class="fas fa-pencil-alt"></i> <span>Kelola Testimoni</span></a>
+			</li>
+			<li class="dropdown">
+				<a href="#" class="nav-link has-dropdown"><i class="fas fa-file"></i> <span>Kelola Blogs</span></a>
+				<ul class="dropdown-menu">
+					<li><a class="nav-link" href="bootstrap-alert.html">Kelola Kategori</a></li>
+					<li><a class="nav-link" href="bootstrap-badge.html">Kelola Artikel</a></li>
+				</ul>
+			</li>
+			<li>
+				<a href="" class="nav-link"><i class="fas fa-user-cog"></i> <span>Profile Saya</span></a>
+			</li>
+			<li>
+				<a href="" class="nav-link"><i class="fas fa-cogs"></i> <span>Pengaturan</span></a>
+			</li>
+			<li>
 				<a class="nav-link text-danger" href="<?= base_url("logout") ?>"><i class="fas fa-sign-out-alt"></i> <span>Sign Out</span></a>
 			</li>
 		</ul>

@@ -37,10 +37,11 @@
 														<th width="10">No.</th>
 														<th width="350">Thumbnail</th>
 														<th>Nama Wisata</th>
+														<th>Slug</th>
 														<th>Lokasi</th>
 														<th>Harga Paket</th>
 														<!-- <th>Harga Promo</th> -->
-														<th>Aksi</th>
+														<th width="120">Aksi</th>
 													</tr>
 												</thead>
 												<tbody>
@@ -52,10 +53,11 @@
 																<img src="<?= base_url("assets/uploads/travels/" . $travel["images"]) ?>" width="100%" class="rounded" style="height: 170px; object-fit: cover; object-position: center;">
 															</td>
 															<td><?= $travel["name"] ?></td>
+															<td><?= $travel["slug"] ?></td>
 															<td><?= $travel["location"] ?></td>
 															<td>IDR. <?= number_format($travel["price"]) ?></td>
 															<td>
-																<a href="" class="btn btn-info btn-icon"><i class="fas fa-eye"></i></a>
+																<a href="<?= base_url("paket/" . $travel["slug"]) ?>" class="btn btn-info btn-icon"><i class="fas fa-eye"></i></a>
 																<a href="<?= base_url("kelola-wisata/update/" . $travel["travel_id"]) ?>" class="btn btn-warning btn-icon"><i class="fas fa-pencil-alt"></i></a>
 																<a href="<?= base_url("kelola-wisata/hapus/" . $travel["travel_id"]) ?>" class="btn btn-danger btn-icon btn-delete"><i class="fas fa-trash"></i></a>
 															</td>
