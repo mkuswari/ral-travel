@@ -29,7 +29,7 @@ $route["kelola-users/hapus/(:num)"] = "user/delete/$1";
 // packages categories management route
 $route['kelola-kategori'] = 'category';
 // travel destinations routes
-$route['kelola-destinasi'] = 'destination';
-$route['kelola-destinasi/tambah'] = 'destination/create';
-$route['kelola-destinasi/update/(:num)'] = 'destination/update/$1';
-$route['kelola-destinasi/hapus/(:num)'] = 'destination/delete/$1';
+$route['kelola-wisata'] = 'travel';
+$route['kelola-wisata/tambah'] = 'travel/create';
+$route['kelola-wisata/update/(:num)'] = 'travel/update/$1';
+$route['kelola-wisata/hapus/(:num)'] = 'travel/delete/$1';

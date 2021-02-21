@@ -16,7 +16,7 @@
 				<a class="nav-link" href="<?= base_url("kelola-users") ?>"><i class="fas fa-users"></i> <span>Kelola Users</span></a>
 			</li>
 			<li>
-				<a href="<?= base_url("kelola-destinasi") ?>" class="nav-link"><i class="fas fa-umbrella-beach"></i> <span>Kelola Destinasi</span></a>
+				<a href="<?= base_url("kelola-wisata") ?>" class="nav-link"><i class="fas fa-umbrella-beach"></i> <span>Kelola Wisata</span></a>
 			</li>
 			<li>
 				<a class="nav-link text-danger" href="<?= base_url("logout") ?>"><i class="fas fa-sign-out-alt"></i> <span>Sign Out</span></a>

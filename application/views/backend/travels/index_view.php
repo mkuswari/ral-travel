@@ -19,8 +19,8 @@
 			<div class="main-content">
 				<section class="section">
 					<div class="section-header d-flex justify-content-between">
-						<h1>Kelola Destinasi</h1>
-						<a href="<?= base_url("kelola-destinasi/tambah") ?>" class="btn btn-primary">Tambah Destinasi</a>
+						<h1>Kelola Paket Wisata</h1>
+						<a href="<?= base_url("kelola-wisata/tambah") ?>" class="btn btn-primary">Tambah Wisata</a>
 					</div>
 
 					<div class="flash-data" data-flashdata="<?= $this->session->flashdata('message'); ?>"></div>
@@ -35,31 +35,32 @@
 												<thead>
 													<tr>
 														<th width="10">No.</th>
-														<th width="350">Image</th>
-														<th>Nama Destinasi</th>
-														<th>Deskripsi</th>
+														<th width="350">Thumbnail</th>
+														<th>Nama Wisata</th>
+														<th>Lokasi</th>
+														<th>Harga Paket</th>
+														<!-- <th>Harga Promo</th> -->
 														<th>Aksi</th>
 													</tr>
 												</thead>
 												<tbody>
 													<?php $no = 1; ?>
-													<?php foreach ($destinations as $destination) : ?>
+													<?php foreach ($travels as $travel) : ?>
 														<tr>
 															<td><?= $no++; ?></td>
 															<td>
-																<img src="<?= base_url("assets/uploads/destinations/" . $destination["images"]) ?>" width="100%" style="height: 150px; object-fit: cover; object-position: center;">
+																<img src="<?= base_url("assets/uploads/travels/" . $travel["images"]) ?>" width="100%" class="rounded" style="height: 170px; object-fit: cover; object-position: center;">
 															</td>
-															<td><?= $destination["name"] ?></td>
+															<td><?= $travel["name"] ?></td>
+															<td><?= $travel["location"] ?></td>
+															<td>IDR. <?= number_format($travel["price"]) ?></td>
 															<td>
-																<small class="text-muted"><?= $destination["description"] ?></small>
-															</td>
-															<td>
-																<a href="<?= base_url("kelola-destinasi/update/" . $destination["id"]) ?>" class="btn btn-warning btn-icon"><i class="fas fa-pencil-alt"></i></a>
-																<a href="<?= base_url("kelola-destinasi/hapus/" . $destination["id"]) ?>" class="btn btn-danger btn-icon"><i class="fas fa-trash"></i></a>
+																<a href="" class="btn btn-info btn-icon"><i class="fas fa-eye"></i></a>
+																<a href="<?= base_url("kelola-wisata/update/" . $travel["travel_id"]) ?>" class="btn btn-warning btn-icon"><i class="fas fa-pencil-alt"></i></a>
+																<a href="<?= base_url("kelola-wisata/hapus/" . $travel["travel_id"]) ?>" class="btn btn-danger btn-icon btn-delete"><i class="fas fa-trash"></i></a>
 															</td>
 														</tr>
 													<?php endforeach; ?>
-													<!-- todo -->
 												</tbody>
 											</table>
 										</div>
@@ -78,8 +79,6 @@
 
 	<!-- scripts -->
 	<?php $this->load->view("components/backend/_scripts"); ?>
-	<!-- end of scripts -->
-	<?php $this->load->view("backend/users/_sweet_alert"); ?>
 </body>
 
 </html>

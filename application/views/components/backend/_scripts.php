@@ -31,3 +31,4 @@
 
 <!-- load library sweet alert -->
 <script src="<?= base_url("assets/library/sweet-alert2/sweetalert2.all.min.js") ?>"></script>
+<script src="<?= base_url("assets/library/app.js") ?>"></script>

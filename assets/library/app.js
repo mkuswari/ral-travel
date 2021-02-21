@@ -1,9 +1,8 @@
-<script>
-	const flashData = $('.flash-data').data('flashdata');
+const flashData = $('.flash-data').data('flashdata');
 	if (flashData) {
 		Swal.fire({
 			title: 'Berhasil',
-			text: 'Data User berhasil ' + flashData,
+			text: 'Data berhasil ' + flashData,
 			icon: 'success'
 		});
 	}
@@ -16,7 +15,7 @@
 
 		Swal.fire({
 			title: 'Kamu yakin?',
-			text: "Data user akan dihapus dari sistem!",
+			text: "Data akan dihapus dari sistem!",
 			icon: 'warning',
 			showCancelButton: true,
 			confirmButtonColor: '#3085d6',
@@ -29,4 +28,3 @@
 		})
 
 	})
-</script>
