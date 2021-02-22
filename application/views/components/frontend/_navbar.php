@@ -15,13 +15,13 @@
 					<a class="nav-link active" href="<?= base_url() ?>">Home</a>
 				</li>
 				<li class="nav-item mx-md-2">
-					<a class="nav-link" href="#">Paket Wisata</a>
+					<a class="nav-link" href="<?= base_url("katalog-wisata") ?>">Paket Wisata</a>
 				</li>
 				<li class="nav-item mx-md-2">
-					<a class="nav-link" href="#">Testimonial</a>
+					<a class="nav-link" href="<?= base_url("testimoni") ?>">Testimonial</a>
 				</li>
 				<li class="nav-item mx-md-2">
-					<a class="nav-link" href="#">Kontak Kami</a>
+					<a class="nav-link" href="<?= base_url("kontak") ?>">Kontak Kami</a>
 				</li>
 
 			</ul>
@@ -35,10 +35,10 @@
 						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 							<?php if ($this->session->userdata("role") == "admin") : ?>
 								<a class="dropdown-item" href="<?= base_url("dashboard") ?>">Dashboard</a>
+								<a class="dropdown-item" href="<?= base_url("home") ?>">Akun Saya</a>
 							<?php else : ?>
 								<a class="dropdown-item" href="<?= base_url("home") ?>">Akun Saya</a>
 							<?php endif; ?>
-							<a class="dropdown-item" href="dashboard-account.html">Settings</a>
 							<div class="dropdown-divider"></div>
 							<a class="dropdown-item text-danger" href="<?= base_url("logout") ?>">Logout</a>
 						</div>

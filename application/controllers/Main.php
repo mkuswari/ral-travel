@@ -17,6 +17,14 @@ class Main extends CI_Controller
 		$this->load->view('landing_view', $data);
 	}
 
+	public function travelCatalog()
+	{
+		$data["title"] = "Katalog Paket Wisata";
+		$data["travels"] = $this->Main_model->getAllTravels();
+
+		$this->load->view('pages/catalogs_view', $data);
+	}
+
 	public function detail($slug)
 	{
 		$getTitle = $this->Main_model->getTitleBySlug($slug);
@@ -25,5 +33,12 @@ class Main extends CI_Controller
 		$data["travels"] = $this->Main_model->getOtherTravel();
 
 		$this->load->view('pages/detail_view', $data);
+	}
+
+	public function bookingWisata()
+	{
+		$data["title"] = "Booking Information";
+
+		$this->load->view('pages/booking_view', $data);
 	}
 }

@@ -8,7 +8,8 @@ $route['translate_uri_dashes'] = FALSE;
 /**
  * global routes
  */
-$route['paket/(:any)'] = 'main/detail/$1';
+$route['katalog-wisata'] = 'main/travelCatalog';
+$route['detail/(:any)'] = 'main/detail/$1';
 
 /**
  * auth routes

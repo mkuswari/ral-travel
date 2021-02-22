@@ -21,7 +21,7 @@
 			<br />
 			yang belum pernah kamu rasakan sebelumnya.
 		</p>
-		<a href="#" class="btn btn-get-started px-4 mt-4">
+		<a href="<?= base_url("katalog-wisata") ?>" class="btn btn-get-started px-4 mt-4">
 			Lihat Paket Wisata
 		</a>
 	</header>
@@ -70,7 +70,7 @@
 								<div class="travel-location"><?= $travel["name"] ?></div>
 								<div class="travel-travel-price">IDR. <?= $travel["price"] ?></div>
 								<div class="travel-button mt-auto">
-									<a href="<?= base_url("paket/" . $travel["slug"]) ?>" class="btn btn-travel-details px-4">
+									<a href="<?= base_url("detail/" . $travel["slug"]) ?>" class="btn btn-travel-details px-4">
 										Lihat Detail
 									</a>
 								</div>

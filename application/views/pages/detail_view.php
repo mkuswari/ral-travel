@@ -37,14 +37,15 @@
 							<div class="gallery">
 								<div class="xzoom-container">
 									<img class="xzoom" id="xzoom-default" src="<?= base_url("assets/uploads/travels/" . $travel["images"]) ?>" xoriginal="<?= base_url("assets/uploads/travels/" . $travel["images"]) ?>" />
-									<div class="xzoom-thumbs">
+									<!-- <div class="xzoom-thumbs">
 										<a href="<?= base_url("assets/uploads/travels/" . $travel["images"]) ?>"><img class="xzoom-gallery" width="128" src="<?= base_url("assets/uploads/travels/" . $travel["images"]) ?>" xpreview="<?= base_url("assets/uploads/travels/" . $travel["images"]) ?>" /></a>
 										<a href="<?= base_url("assets/frontend/images/details-1.jpg") ?>"><img class="xzoom-gallery" width="128" src="<?= base_url("assets/frontend/images/details-1.jpg") ?>" xpreview="<?= base_url("assets/frontend/images/details-1.jpg") ?>" /></a>
 										<a href="<?= base_url("assets/frontend/images/details-1.jpg") ?>"><img class="xzoom-gallery" width="128" src="<?= base_url("assets/frontend/images/details-1.jpg") ?>" xpreview="<?= base_url("assets/frontend/images/details-1.jpg") ?>" /></a>
 										<a href="<?= base_url("assets/frontend/images/details-1.jpg") ?>"><img class="xzoom-gallery" width="128" src="<?= base_url("assets/frontend/images/details-1.jpg") ?>" xpreview="<?= base_url("assets/frontend/images/details-1.jpg") ?>" /></a>
 										<a href="<?= base_url("assets/frontend/images/details-1.jpg") ?>"><img class="xzoom-gallery" width="128" src="<?= base_url("assets/frontend/images/details-1.jpg") ?>" xpreview="<?= base_url("assets/frontend/images/details-1.jpg") ?>" /></a>
-									</div>
+									</div> -->
 								</div>
+								<hr>
 								<h2>Tentang Wisata</h2>
 								<div>
 									<?= $travel["description"] ?>
@@ -62,7 +63,7 @@
 											<div class="travel-location"><?= $travel["name"] ?></div>
 											<div class="travel-travel-price">IDR. <?= $travel["price"] ?></div>
 											<div class="travel-button mt-auto">
-												<a href="<?= base_url("paket/" . $travel["slug"]) ?>" class="btn btn-travel-details px-4">
+												<a href="<?= base_url("detail/" . $travel["slug"]) ?>" class="btn btn-travel-details px-4">
 													Lihat Detail
 												</a>
 											</div>
@@ -71,10 +72,6 @@
 								<?php endforeach; ?>
 							</div>
 						</section>
-						<!-- <section class="section-reviews mt-4">
-							<h4 class="font-weight-bold">Ulasan Member</h4>
-							<hr>
-						</section> -->
 					</div>
 					<div class="col-lg-4">
 						<form action="" method="post">
