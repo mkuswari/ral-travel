@@ -7,9 +7,6 @@
 
 <body style="background-image: url(<?= base_url('assets/frontend/images/banner/sembalun-banner.jpg') ?>); background-size: cover;
 	background-position: center; background-repeat: no-repeat;">
-	<!-- navbar -->
-	<?php $this->load->view("components/auth/_navbar"); ?>
-	<!-- end of navbar -->
 	<main>
 		<div class="container">
 			<div class="section d-flex align-items-center" style="margin-top: 120px;">
