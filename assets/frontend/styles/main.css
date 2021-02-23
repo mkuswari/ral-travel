@@ -45,6 +45,10 @@ header {
 	background-position: center;
 }
 
+.bg-auth{
+	background-image: url("../images/banner/sembalun-banner.jpg");
+}
+
 header h1,
 header p {
   color: #fff;

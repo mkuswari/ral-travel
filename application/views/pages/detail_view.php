@@ -37,13 +37,6 @@
 							<div class="gallery">
 								<div class="xzoom-container">
 									<img class="xzoom" id="xzoom-default" src="<?= base_url("assets/uploads/travels/" . $travel["images"]) ?>" xoriginal="<?= base_url("assets/uploads/travels/" . $travel["images"]) ?>" />
-									<!-- <div class="xzoom-thumbs">
-										<a href="<?= base_url("assets/uploads/travels/" . $travel["images"]) ?>"><img class="xzoom-gallery" width="128" src="<?= base_url("assets/uploads/travels/" . $travel["images"]) ?>" xpreview="<?= base_url("assets/uploads/travels/" . $travel["images"]) ?>" /></a>
-										<a href="<?= base_url("assets/frontend/images/details-1.jpg") ?>"><img class="xzoom-gallery" width="128" src="<?= base_url("assets/frontend/images/details-1.jpg") ?>" xpreview="<?= base_url("assets/frontend/images/details-1.jpg") ?>" /></a>
-										<a href="<?= base_url("assets/frontend/images/details-1.jpg") ?>"><img class="xzoom-gallery" width="128" src="<?= base_url("assets/frontend/images/details-1.jpg") ?>" xpreview="<?= base_url("assets/frontend/images/details-1.jpg") ?>" /></a>
-										<a href="<?= base_url("assets/frontend/images/details-1.jpg") ?>"><img class="xzoom-gallery" width="128" src="<?= base_url("assets/frontend/images/details-1.jpg") ?>" xpreview="<?= base_url("assets/frontend/images/details-1.jpg") ?>" /></a>
-										<a href="<?= base_url("assets/frontend/images/details-1.jpg") ?>"><img class="xzoom-gallery" width="128" src="<?= base_url("assets/frontend/images/details-1.jpg") ?>" xpreview="<?= base_url("assets/frontend/images/details-1.jpg") ?>" /></a>
-									</div> -->
 								</div>
 								<hr>
 								<h2>Tentang Wisata</h2>
@@ -61,7 +54,7 @@
 										<div class="card-travel text-center d-flex flex-column shadow-lg" style="background-image: url('http://localhost/ral-travel/assets/uploads/travels/<?= $travel["images"] ?>');">
 											<div class="travel-country"><?= $travel["location"] ?></div>
 											<div class="travel-location"><?= $travel["name"] ?></div>
-											<div class="travel-travel-price">IDR. <?= $travel["price"] ?></div>
+											<div class="travel-travel-price">IDR. <?= number_format($travel["price"]) ?></div>
 											<div class="travel-button mt-auto">
 												<a href="<?= base_url("detail/" . $travel["slug"]) ?>" class="btn btn-travel-details px-4">
 													Lihat Detail
@@ -74,27 +67,28 @@
 						</section>
 					</div>
 					<div class="col-lg-4">
-						<form action="" method="post">
+						<form action="<?= base_url("booking-wisata/" . $travel["travel_id"]) ?>" method="post">
 							<div class="card card-details card-right shadow border-0">
 								<h2>Detail Lengkap</h2>
 								<table class="trip-informations">
 									<tr>
-										<th width="50%">Lokasi</th>
-										<td width="50%" class="text-right"><?= $travel["location"] ?></td>
+										<th width="40%">Lokasi</th>
+										<td width="60%" class="text-right"><?= $travel["location"] ?></td>
 									</tr>
 									<tr>
-										<th width="50%">Harga</th>
-										<td width="50%" class="text-right">IDR. <?= $travel["price"] ?></td>
+										<th width="40%">Harga</th>
+										<td width="60%" class="text-right">IDR. <?= number_format($travel["price"]) ?> / Hari</td>
 									</tr>
 								</table>
 								<hr>
 								<div class="form-group">
 									<label for="duration">Berapa Hari</label>
-									<input type="number" class="form-control" name="duration" id="duration">
+									<input type="number" class="form-control <?= form_error("duration") ? "is-invalid" : "" ?>" name="duration" id="duration" value="1">
+									<?= form_error('name', '<div class="invalid-feedback font-weight-bold pl-1">', '</div>') ?>
 								</div>
 								<div class="form-group">
-									<label for="duration">Pilih Tanggal</label>
-									<input type="date" class="form-control" name="duration" id="duration">
+									<label for="travel_date">Pilih Tanggal</label>
+									<input type="date" class="form-control" name="travel_date" id="travel_date">
 								</div>
 							</div>
 							<div class="join-container">
@@ -112,6 +106,11 @@
 	<!-- scripts -->
 	<?php $this->load->view("components/frontend/_scripts"); ?>
 	<!-- end of scripts -->
+
+	<!-- give today date to input -->
+	<script>
+		$('#travel_date').val(new Date().toISOString().slice(0, 10));
+	</script>
 
 </body>
 

@@ -10,7 +10,10 @@ $route['translate_uri_dashes'] = FALSE;
  */
 $route['katalog-wisata'] = 'main/travelCatalog';
 $route['detail/(:any)'] = 'main/detail/$1';
-
+$route['booking-wisata/(:num)'] = 'main/bookingtravel/$1';
+$route['proses-booking/(:num)'] = 'main/processbooking/$1';
+$route['konfirmasi-pembayaran/(:any)'] = 'main/paymentconfirmation/$1';
+$route['pembayaran-berhasil'] = 'main/paymentsucessfully';
 /**
  * auth routes
  */

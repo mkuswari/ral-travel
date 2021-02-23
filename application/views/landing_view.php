@@ -68,7 +68,7 @@
 							<div class="card-travel text-center d-flex flex-column" style="background-image: url('http://localhost/ral-travel/assets/uploads/travels/<?= $travel["images"] ?>');">
 								<div class="travel-country"><?= $travel["location"] ?></div>
 								<div class="travel-location"><?= $travel["name"] ?></div>
-								<div class="travel-travel-price">IDR. <?= $travel["price"] ?></div>
+								<div class="travel-travel-price">IDR. <?= number_format($travel["price"]) ?></div>
 								<div class="travel-button mt-auto">
 									<a href="<?= base_url("detail/" . $travel["slug"]) ?>" class="btn btn-travel-details px-4">
 										Lihat Detail

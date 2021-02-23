@@ -5,7 +5,8 @@
 <?php $this->load->view("components/auth/_head"); ?>
 <!-- end of head -->
 
-<body class="bg-grey">
+<body style="background-image: url(<?= base_url('assets/frontend/images/banner/sembalun-banner.jpg') ?>); background-size: cover;
+	background-position: center;">
 	<!-- navbar -->
 	<?php $this->load->view("components/auth/_navbar"); ?>
 	<!-- end of navbar -->

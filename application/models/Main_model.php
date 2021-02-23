@@ -33,4 +33,24 @@ class Main_model extends CI_Model
 	{
 		return $this->db->get_where("travels", ["slug" => $slug])->row_array();
 	}
+
+	public function getTravelById($id)
+	{
+		return $this->db->get_where("travels", ["travel_id" => $id])->row_array();
+	}
+
+	public function addNewBooking($bookingData)
+	{
+		$this->db->insert("bookings", $bookingData);
+	}
+
+	public function getBookingByCode($bookingCode)
+	{
+		return $this->db->get_where("bookings", ["booking_code" => $bookingCode])->row_array();
+	}
+
+	public function addConfirmPayment($paymentData)
+	{
+		$this->db->insert("payment_confirmations", $paymentData);
+	}
 }
