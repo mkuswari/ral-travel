@@ -144,6 +144,28 @@
 				</div>
 			</div>
 		</section>
+
+		<section class="section-blogs bg-light py-5">
+			<div class="container">
+				<div class="row">
+					<div class="col text-center">
+						<h2 style="font-family: 'Lora', serif;" class="font-weight-bold">Artikel Terbaru</h2>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-4">
+						<div class="card">
+							<img class="card-img-top" src="" alt="">
+							<div class="card-body">
+								<h5 class="card-title">Title</h5>
+								<p class="card-text">Content</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
 	</main>
 
 	<!-- footer -->

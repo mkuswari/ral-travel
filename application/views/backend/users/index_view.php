@@ -92,7 +92,6 @@
 	<!-- scripts -->
 	<?php $this->load->view("components/backend/_scripts"); ?>
 	<!-- end of scripts -->
-	<!-- <?php $this->load->view("backend/users/_sweet_alert"); ?> -->
 </body>
 
 </html>

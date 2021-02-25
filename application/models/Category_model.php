@@ -3,83 +3,33 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class Category_model extends CI_Model
 {
-	var $table = 'categories';
-	var $columnOrder = array('name', 'slug', 'created_at', 'updated_at', null);
-	var $columnSearch = array('name');
-	var $order = array('id' => "DESC");
 
-	private function _getDatatablesQuery()
+	public function getAllCategories()
 	{
-		$this->db->from($this->table);
-
-		$i = 0;
-
-		foreach ($this->columnSearch as $item) {
-			if ($_POST['search']['value']) {
-				if ($i === 0) {
-					$this->db->group_start();
-					$this->db->like($item, $_POST['search']['value']);
-				} else {
-					$this->db->or_like($item, $_POST['search']['value']);
-				}
-				if (count($this->columnSearch) - 1 == $i) {
-					$this->db->group_end();
-				}
-				$i++;
-			}
-			if (isset($_POST['order'])) // here order processing
-			{
-				$this->db->order_by($this->column_order[$_POST['order']['0']['column']], $_POST['order']['0']['dir']);
-			} else if (isset($this->order)) {
-				$order = $this->order;
-				$this->db->order_by(key($order), $order[key($order)]);
-			}
-		}
+		return $this->db->get("categories")->result_array();
 	}
 
-	public function getDatatables()
+	public function deleteCategory($id)
 	{
-		$this->_getDatatablesQuery();
-		if ($_POST['length'] != -1) {
-			$this->db->limit($_POST['length'], $_POST['start']);
-			return $this->db->get()->result();
-		}
+		$this->db->where("category_id", $id);
+		$this->db->delete("categories");
 	}
 
-	public function countFiltered()
+	public function addNewCategory($categoryData)
 	{
-		$this->_getDatatablesQuery();
-		return $this->db->get()->num_rows();
+		$this->db->insert("categories", $categoryData);
 	}
 
-	public function countAll()
+	public function getCategoryById($id)
 	{
-		$this->db->from($this->table);
-		return $this->db->count_all_results();
+		return $this->db->get_where("categories", ["category_id" => $id])->row_array();
 	}
 
-	public function getById($id)
+	public function updateCategory($categoryData)
 	{
-		$this->db->from($this->table);
-		$this->db->where('id', $id);
-		return $this->db->get()->row();
-	}
-
-	public function save($data)
-	{
-		$this->db->insert($this->table, $data);
-		return $this->db->insert_id();
-	}
-
-	public function update($where, $data)
-	{
-		$this->db->update($this->table, $data, $where);
-		return $this->db->affected_rows();
-	}
-
-	public function deleteById($id)
-	{
-		$this->db->where('id', $id);
-		$this->db->delete($this->table);
+		$this->db->set("name", $categoryData["name"]);
+		$this->db->set("slug", $categoryData["slug"]);
+		$this->db->where("category_id", $this->input->post("category_id"));
+		$this->db->update("categories", $categoryData);
 	}
 }

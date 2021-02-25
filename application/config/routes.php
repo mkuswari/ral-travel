@@ -37,7 +37,11 @@ $route["kelola-users"] = "user";
 $route["kelola-users/tambah"] = "user/create";
 $route["kelola-users/update/(:num)"] = "user/update/$1";
 $route["kelola-users/hapus/(:num)"] = "user/delete/$1";
+
 $route['kelola-kategori'] = 'category';
+$route['kelola-kategori/tambah'] = 'category/create';
+$route['kelola-kategori/update/(:num)'] = 'category/update/$1';
+$route['kelola-kategori/hapus/(:num)'] = 'category/delete/$1';
 
 $route['kelola-wisata'] = 'travel';
 $route['kelola-wisata/tambah'] = 'travel/create';
