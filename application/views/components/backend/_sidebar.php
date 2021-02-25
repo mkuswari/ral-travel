@@ -19,7 +19,7 @@
 				<a href="<?= base_url("kelola-wisata") ?>" class="nav-link"><i class="fas fa-umbrella-beach"></i> <span>Kelola Wisata</span></a>
 			</li>
 			<li>
-				<a href="" class="nav-link"><i class="fas fa-credit-card"></i> <span>Kelola Booking</span></a>
+				<a href="<?= base_url("kelola-booking") ?>" class="nav-link"><i class="fas fa-credit-card"></i> <span>Kelola Booking</span></a>
 			</li>
 			<li>
 				<a href="" class="nav-link"><i class="fas fa-pencil-alt"></i> <span>Kelola Testimoni</span></a>

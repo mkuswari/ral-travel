@@ -41,3 +41,7 @@ $route['kelola-wisata'] = 'travel';
 $route['kelola-wisata/tambah'] = 'travel/create';
 $route['kelola-wisata/update/(:num)'] = 'travel/update/$1';
 $route['kelola-wisata/hapus/(:num)'] = 'travel/delete/$1';
+
+$route['kelola-booking'] = 'booking';
+$route['kelola-booking/detail/(:num)'] = 'booking/detail/$1';
+$route['kelola-booking/hapus/(:num)'] = 'booking/delete/$1';
