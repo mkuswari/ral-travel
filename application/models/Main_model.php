@@ -11,7 +11,7 @@ class Main_model extends CI_Model
 
 	public function getNewTravel()
 	{
-		$this->db->limit(4);
+		$this->db->limit(8);
 		return $this->db->get("travels")->result_array();
 	}
 
@@ -52,5 +52,27 @@ class Main_model extends CI_Model
 	public function addConfirmPayment($paymentData)
 	{
 		$this->db->insert("payment_confirmations", $paymentData);
+	}
+
+	public function addNewTestimonial($testimonialData)
+	{
+		$this->db->insert("testimonials", $testimonialData);
+	}
+
+	public function getNewTestimonials()
+	{
+		$this->db->limit(3);
+		$this->db->select("*");
+		$this->db->from('testimonials');
+		$this->db->join("users", "users.user_id = testimonials.user_id");
+		return $this->db->get()->result_array();
+	}
+
+	public function getAllTestimonials()
+	{
+		$this->db->select("*");
+		$this->db->from('testimonials');
+		$this->db->join("users", "users.user_id = testimonials.user_id");
+		return $this->db->get()->result_array();
 	}
 }

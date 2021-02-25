@@ -97,57 +97,49 @@
 		<section class="section-testimonials-content" id="testimonialsContent">
 			<div class="container">
 				<div class="section-popular-travel row justify-content-center match-height">
-					<div class="col-sm-6 col-md-6 col-lg-4">
-						<div class="card card-testimonial text-center shadow-lg border-0">
-							<div class="testimonial-content">
-								<img src="frontend/images/avatar-1.png" alt="" class="mb-4 rounded-circle" />
-								<h3 class="mb-4">Angga Risky</h3>
-								<p class="testimonials">
-									“ It was glorious and I could not stop to say wohooo for
-									every single moment Dankeeeeee “
-								</p>
+					<?php if ($testimonials) : ?>
+						<?php foreach ($testimonials as $testimonial) : ?>
+							<div class="col-sm-6 col-md-6 col-lg-4">
+								<div class="card card-testimonial text-center shadow-lg border-0">
+									<div class="testimonial-content">
+										<img src="<?= base_url("assets/uploads/avatars/" . $testimonial["avatar"]) ?>" style="width:100px; height:100px; object-fit: cover; object-position: center;" class="mb-4 rounded-circle" />
+										<h3 class="mb-4"><?= $testimonial["name"] ?></h3>
+										<p class="testimonials">
+											“ <?= $testimonial["content"] ?> “
+										</p>
+									</div>
+								</div>
 							</div>
-							<hr />
-							<p class="trip-to mt-2">Trip to Ubud</p>
-						</div>
-					</div>
-					<div class="col-sm-6 col-md-6 col-lg-4">
-						<div class="card card-testimonial text-center shadow-lg border-0">
-							<div class="testimonial-content">
-								<img src="frontend/images/avatar-2.png" alt="" class="mb-4 rounded-circle" />
-								<h3 class="mb-4">Shayna</h3>
-								<p class="testimonials">
-									“ The trip was amazing and I saw something beautiful in that
-									Island that makes me want to learn more “
-								</p>
-							</div>
-							<hr />
-							<p class="trip-to mt-2">Trip to Nusa Penida</p>
-						</div>
-					</div>
-					<div class="col-sm-6 col-md-6 col-lg-4">
-						<div class="card card-testimonial text-center shadow-lg border-0">
-							<div class="testimonial-content mb-auto">
-								<img src="frontend/images/avatar-3.png" alt="" class="mb-4 rounded-circle" />
-								<h3 class="mb-4">Shabrina</h3>
-								<p class="testimonials">
-									“ I loved it when the waves was shaking harder — I was
-									scared too “
-								</p>
-							</div>
-							<hr />
-							<p class="trip-to mt-2">Trip to Karimun Jawa</p>
-						</div>
-					</div>
+						<?php endforeach; ?>
+					<?php else : ?>
+						<img src="<?= base_url("assets/frontend/images/no-data.svg") ?>" width="400">
+					<?php endif; ?>
 				</div>
-				<div class="row">
-					<div class="col-12 text-center">
-						<a href="#" class="btn btn-need-help px-4 mt-4 mx-1">
-							Saya butuh bantuan
-						</a>
-						<a href="#" class="btn btn-get-started px-4 mt-4 mx-1">
-							Lihat Paket Wisata
-						</a>
+				<?php if ($testimonials) : ?>
+					<div class="row">
+						<div class="col-12 text-center">
+							<a href="<?= base_url("testimoni") ?>" class="btn btn-get-started px-4 mt-4 mx-1">
+								Lihat Story Lainnya
+							</a>
+						</div>
+					</div>
+				<?php endif; ?>
+				<hr>
+				<div class="card shadow border-0">
+					<div class="card-body">
+						<div class="row">
+							<div class="col text-center">
+								<h4 class="font-weight-bold" style="font-family: 'Lora', serif;">Bagikan Cerita Kamu?</h4>
+								<p>Bagikan cerita seru kamu di RAL T&T melalui form dibawah ini.</p>
+								<hr>
+								<div class="testimonial-content px-5">
+									<form action="<?= base_url("testimoni/tambah") ?>" method="post">
+										<textarea class="form-control" name="content" id="content" rows="6" placeholder="Tuliskan pengalaman kamu menggunakan RAL T&T disini..." required></textarea>
+										<button type="submit" class="btn btn-login mt-2">Kirim Story Kamu</button>
+									</form>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>

@@ -30,8 +30,12 @@ class Booking extends CI_Controller
 
 	public function delete($id)
 	{
+		$payment = $this->Booking_model->getPaymentInfo($id);
+		if (file_exists('./assets/uploads/transfers_slip/' . $payment["transfer_slip"]) && $payment["transfer_slip"] != "default.jpg") {
+			unlink('./assets/uploads/transfers_slip/' . $payment["transfer_slip"]);
+		}
+
 		$this->Booking_model->deleteBooking($id);
-		$this->Booking_model->deletePayement($id);
 		$this->session->set_flashdata('message', 'Dihapus');
 		redirect('kelola-booking');
 	}

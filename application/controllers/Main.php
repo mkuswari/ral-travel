@@ -15,6 +15,8 @@ class Main extends CI_Controller
 	{
 		$data["title"] = "Temukan Beragam Paket Wisata sesuai dengan kebutuhan anda";
 		$data["travels"] = $this->Main_model->getNewTravel();
+		$data["testimonials"] = $this->Main_model->getNewTestimonials();
+
 		$this->load->view('landing_view', $data);
 	}
 
@@ -128,6 +130,29 @@ class Main extends CI_Controller
 		$data["title"] = "Pembayaran Berhasil";
 
 		$this->load->view("pages/payment_success_view", $data);
+	}
+
+	public function testimonials()
+	{
+		$data["title"] = "Story Dari members";
+		$data["testimonials"] = $this->Main_model->getAllTestimonials();
+
+		$this->load->view("pages/testimonial_view", $data);
+	}
+
+	public function addTestimonial()
+	{
+		$userId = $this->session->userdata("user_id");
+		$content = $this->input->post('content');
+
+		$testimonialData = [
+			"user_id" => $userId,
+			"content" => $content
+		];
+
+		$this->Main_model->addNewTestimonial($testimonialData);
+		$this->session->set_flashdata('message', '<div class="alert alert-success">Story Kamu berhasil dibagikan</div>');
+		redirect('testimoni');
 	}
 
 	private function _validateOnConfirmPayment()

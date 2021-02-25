@@ -2,8 +2,8 @@
 -- version 5.0.4
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Feb 23, 2021 at 10:26 PM
+-- Host: localhost
+-- Generation Time: Feb 25, 2021 at 09:57 AM
 -- Server version: 10.4.16-MariaDB
 -- PHP Version: 7.3.24
 
@@ -60,22 +60,6 @@ CREATE TABLE `bookings` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Dumping data for table `bookings`
---
-
-INSERT INTO `bookings` (`booking_id`, `booking_code`, `name`, `email`, `phone`, `duration`, `total_payment`, `travel_date`, `user_id`, `travel_id`, `created_at`, `updated_at`) VALUES
-(1, '6034a7153d7b5', 'Muhammad Kuswari', 'muhammad.kuswari10@gmail.com', '081939448487', 1, 250000, '2021-02-23', 1, 2, '2021-02-23 06:56:21', NULL),
-(2, '6034a7cb83872', 'Muhammad Kuswari', 'muhammad.kuswari10@gmail.com', '081939448487', 1, 250000, '2021-02-23', 1, 2, '2021-02-23 06:59:23', NULL),
-(3, '6034a85164c53', 'Muhammad Kuswari', 'muhammad.kuswari10@gmail.com', '081939448487', 3, 750000, '2021-02-24', 1, 2, '2021-02-23 07:01:37', NULL),
-(4, '6034a880e1a13', 'Muhammad Kuswari', 'muhammad.kuswari10@gmail.com', '081939448487', 3, 750000, '2021-02-24', 1, 2, '2021-02-23 07:02:24', NULL),
-(5, '6034aa742c159', 'Muhammad Kuswari', 'muhammad.kuswari10@gmail.com', '081939448487', 2, 500000, '2021-02-23', 1, 2, '2021-02-23 07:10:44', NULL),
-(6, '6034aa959bd71', 'Muhammad Kuswari', 'muhammad.kuswari10@gmail.com', '081939448487', 2, 500000, '2021-02-23', 1, 2, '2021-02-23 07:11:17', NULL),
-(7, '6034aaa2d46c6', 'Muhammad Kuswari', 'muhammad.kuswari10@gmail.com', '081939448487', 2, 500000, '2021-02-23', 1, 2, '2021-02-23 07:11:30', NULL),
-(8, '6034ab8254e36', 'Muhammad Kuswari', 'muhammad.kuswari10@gmail.com', '081939448487', 4, 1000000, '2021-02-23', 1, 2, '2021-02-23 07:15:14', NULL),
-(9, '6034cc01301b6', 'Muhammad Kuswari', 'muhammad.kuswari10@gmail.com', '081939448487', 2, 500000, '2021-02-23', 1, 2, '2021-02-23 09:33:53', NULL),
-(10, '6034cc7c504d0', 'Muhammad Kuswari', 'muhammad.kuswari10@gmail.com', '081939448487', 1, 250000, '2021-02-23', 1, 2, '2021-02-23 09:35:56', NULL);
-
 -- --------------------------------------------------------
 
 --
@@ -86,7 +70,6 @@ CREATE TABLE `categories` (
   `category_id` int(11) NOT NULL,
   `name` varchar(128) NOT NULL,
   `slug` varchar(128) NOT NULL,
-  `thumbnail` varchar(255) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -107,15 +90,6 @@ CREATE TABLE `payment_confirmations` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Dumping data for table `payment_confirmations`
---
-
-INSERT INTO `payment_confirmations` (`id_payment_confirmation`, `booking_id`, `transfer_slip`, `origin_bank`, `sender_name`, `created_at`, `updated_at`) VALUES
-(1, 8, '1614072627942.jpg', 'BCA', 'asasas', '2021-02-23 09:30:27', NULL),
-(2, 9, '1614072842085.jpg', 'Mandiri', 'Jevi', '2021-02-23 09:34:02', NULL),
-(3, 10, '1614072971199.jpg', 'Mandiri', 'rahma', '2021-02-23 09:36:11', NULL);
-
 -- --------------------------------------------------------
 
 --
@@ -125,7 +99,6 @@ INSERT INTO `payment_confirmations` (`id_payment_confirmation`, `booking_id`, `t
 CREATE TABLE `testimonials` (
   `testimonial_id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
-  `travel_id` int(11) NOT NULL,
   `content` text NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `updated_at` timestamp NULL DEFAULT NULL
@@ -180,7 +153,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`user_id`, `name`, `email`, `phone`, `address`, `avatar`, `password`, `role`, `created_at`, `updated_at`) VALUES
-(1, 'Muhammad Kuswari', 'muhammad.kuswari10@gmail.com', '081939448487', 'Jl. Bunga Matahari, No.11 Gomong Lama, Mataram.', '1613868594626.png', '$2y$10$do93BJQioG4Vwz8zn7AHgOPwdgq9MF3MYBiRUGSrmnRNrhP36uBkm', 'admin', '2021-02-21 00:49:54', NULL);
+(1, 'Muhammad Kuswari', 'muhammad.kuswari10@gmail.com', '081939448487', 'Jl. Bunga Matahari, No.11 Gomong Lama, Mataram.', 'default.jpg', '$2y$10$do93BJQioG4Vwz8zn7AHgOPwdgq9MF3MYBiRUGSrmnRNrhP36uBkm', 'admin', '2021-02-25 08:56:39', NULL);
 
 --
 -- Indexes for dumped tables
@@ -220,8 +193,7 @@ ALTER TABLE `payment_confirmations`
 --
 ALTER TABLE `testimonials`
   ADD PRIMARY KEY (`testimonial_id`),
-  ADD KEY `user_id` (`user_id`),
-  ADD KEY `travel_id` (`travel_id`);
+  ADD KEY `user_id` (`user_id`);
 
 --
 -- Indexes for table `travels`
@@ -249,19 +221,19 @@ ALTER TABLE `blogs`
 -- AUTO_INCREMENT for table `bookings`
 --
 ALTER TABLE `bookings`
-  MODIFY `booking_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `booking_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `payment_confirmations`
 --
 ALTER TABLE `payment_confirmations`
-  MODIFY `id_payment_confirmation` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_payment_confirmation` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `testimonials`
 --
 ALTER TABLE `testimonials`
-  MODIFY `testimonial_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `testimonial_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `travels`
@@ -273,7 +245,7 @@ ALTER TABLE `travels`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- Constraints for dumped tables
@@ -302,8 +274,7 @@ ALTER TABLE `payment_confirmations`
 -- Constraints for table `testimonials`
 --
 ALTER TABLE `testimonials`
-  ADD CONSTRAINT `testimonials_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `testimonials_ibfk_2` FOREIGN KEY (`travel_id`) REFERENCES `travels` (`travel_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `testimonials_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

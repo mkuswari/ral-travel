@@ -14,6 +14,8 @@ $route['booking-wisata/(:num)'] = 'main/bookingtravel/$1';
 $route['proses-booking/(:num)'] = 'main/processbooking/$1';
 $route['konfirmasi-pembayaran/(:any)'] = 'main/paymentconfirmation/$1';
 $route['pembayaran-berhasil'] = 'main/paymentsucessfully';
+$route['testimoni'] = 'main/testimonials';
+$route['testimoni/tambah'] = 'main/addtestimonial';
 /**
  * auth routes
  */
@@ -45,3 +47,8 @@ $route['kelola-wisata/hapus/(:num)'] = 'travel/delete/$1';
 $route['kelola-booking'] = 'booking';
 $route['kelola-booking/detail/(:num)'] = 'booking/detail/$1';
 $route['kelola-booking/hapus/(:num)'] = 'booking/delete/$1';
+
+$route['kelola-testimoni'] = 'testimonial';
+$route['kelola-testimoni/tambah'] = 'testimonial/create';
+$route['kelola-testimoni/update/(:num)'] = 'testimonial/update/$1';
+$route['kelola-testimoni/hapus/(:num)'] = 'testimonial/delete/$1';

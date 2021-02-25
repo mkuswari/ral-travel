@@ -22,7 +22,7 @@
 				<a href="<?= base_url("kelola-booking") ?>" class="nav-link"><i class="fas fa-credit-card"></i> <span>Kelola Booking</span></a>
 			</li>
 			<li>
-				<a href="" class="nav-link"><i class="fas fa-pencil-alt"></i> <span>Kelola Testimoni</span></a>
+				<a href="<?= base_url("kelola-testimoni") ?>" class="nav-link"><i class="fas fa-pencil-alt"></i> <span>Kelola Testimoni</span></a>
 			</li>
 			<li class="dropdown">
 				<a href="#" class="nav-link has-dropdown"><i class="fas fa-file"></i> <span>Kelola Blogs</span></a>
