@@ -75,4 +75,25 @@ class Main_model extends CI_Model
 		$this->db->join("users", "users.user_id = testimonials.user_id");
 		return $this->db->get()->result_array();
 	}
+
+	public function getLatestBlog()
+	{
+		$this->db->limit(3);
+		return $this->db->get("blogs")->result_array();
+	}
+
+	public function getAllBlogs()
+	{
+		return $this->db->get("blogs")->result_array();
+	}
+
+	public function getBlogBySlug($slug)
+	{
+		// $this->db->select("*");
+		// $this->db->from('blogs');
+		// $this->db->where("slug", $slug);
+		// $this->db->join("categories", "categories.category_id = blogs.category_id");
+		// return $this->db->get()->row_array();
+		return $this->db->get_where("blogs", ["slug" => $slug])->row_array();
+	}
 }

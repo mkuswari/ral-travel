@@ -16,6 +16,7 @@ class Main extends CI_Controller
 		$data["title"] = "Temukan Beragam Paket Wisata sesuai dengan kebutuhan anda";
 		$data["travels"] = $this->Main_model->getNewTravel();
 		$data["testimonials"] = $this->Main_model->getNewTestimonials();
+		$data["blogs"] = $this->Main_model->getLatestBlog();
 
 		$this->load->view('landing_view', $data);
 	}
@@ -107,7 +108,7 @@ class Main extends CI_Controller
 				if ($this->upload->do_upload("transfer_slip")) {
 					$transfer_slip = $this->upload->data("file_name");
 				} else {
-					$transfer_slip = "default.jpg";
+					$this->upload->display_errors();
 				}
 			}
 			$origin_bank = $this->input->post("origin_bank");
@@ -153,6 +154,23 @@ class Main extends CI_Controller
 		$this->Main_model->addNewTestimonial($testimonialData);
 		$this->session->set_flashdata('message', '<div class="alert alert-success">Story Kamu berhasil dibagikan</div>');
 		redirect('testimoni');
+	}
+
+	public function blogs()
+	{
+		$data["title"] = "Blogs";
+		$data["blogs"] = $this->Main_model->getAllBlogs();
+
+		$this->load->view("pages/blogs_view", $data);
+	}
+
+	public function blogsDetail($slug)
+	{
+		$getTitle = $this->Main_model->getBlogBySlug($slug);
+		$data["title"] = $getTitle["title"];
+		$data["blog"] = $this->Main_model->getBlogBySlug($slug);
+
+		$this->load->view("pages/blog_detail_view", $data);
 	}
 
 	private function _validateOnConfirmPayment()

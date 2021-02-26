@@ -43,7 +43,7 @@ class Travel extends CI_Controller
 				if ($this->upload->do_upload("images")) {
 					$images = $this->upload->data("file_name");
 				} else {
-					$images = "default.jpg";
+					$this->upload->display_errors();
 				}
 			}
 			$location = htmlspecialchars($this->input->post("location"), true);

@@ -16,6 +16,8 @@ $route['konfirmasi-pembayaran/(:any)'] = 'main/paymentconfirmation/$1';
 $route['pembayaran-berhasil'] = 'main/paymentsucessfully';
 $route['testimoni'] = 'main/testimonials';
 $route['testimoni/tambah'] = 'main/addtestimonial';
+$route['blogs'] = 'main/blogs';
+$route['blogs/(:any)']  = 'main/blogsDetail/$1';
 /**
  * auth routes
  */
@@ -56,3 +58,9 @@ $route['kelola-testimoni'] = 'testimonial';
 $route['kelola-testimoni/tambah'] = 'testimonial/create';
 $route['kelola-testimoni/update/(:num)'] = 'testimonial/update/$1';
 $route['kelola-testimoni/hapus/(:num)'] = 'testimonial/delete/$1';
+
+$route['kelola-blog'] = 'blog';
+$route['kelola-blog/tambah'] = 'blog/create';
+$route['kelola-blog/detail/(:num)'] = 'blog/detail/$1';
+$route['kelola-blog/update/(:num)'] = 'blog/update/$1';
+$route['kelola-blog/hapus/(:num)'] = 'blog/delete/$1';

@@ -21,6 +21,9 @@
 					<a class="nav-link" href="<?= base_url("testimoni") ?>">Story Member</a>
 				</li>
 				<li class="nav-item mx-md-2">
+					<a class="nav-link" href="<?= base_url("blogs") ?>">Blog</a>
+				</li>
+				<li class="nav-item mx-md-2">
 					<a class="nav-link" href="<?= base_url("kontak") ?>">Kontak Kami</a>
 				</li>
 

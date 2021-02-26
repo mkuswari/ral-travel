@@ -28,7 +28,7 @@
 				<a href="#" class="nav-link has-dropdown"><i class="fas fa-file"></i> <span>Kelola Blogs</span></a>
 				<ul class="dropdown-menu">
 					<li><a class="nav-link" href="<?= base_url("kelola-kategori") ?>">Kelola Kategori</a></li>
-					<li><a class="nav-link" href="bootstrap-badge.html">Kelola Artikel</a></li>
+					<li><a class="nav-link" href="<?= base_url("kelola-blog") ?>">Kelola Artikel</a></li>
 				</ul>
 			</li>
 			<li>

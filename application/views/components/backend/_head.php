@@ -21,7 +21,6 @@
 	<!-- Template CSS -->
 	<link rel="stylesheet" href="<?= base_url("assets/backend/css/style.css") ?>">
 	<link rel="stylesheet" href="<?= base_url("assets/backend/css/components.css") ?>">
-
 	<!-- load library sweet alert -->
 	<script src="<?= base_url("assets/library/sweet-alert2/sweetalert2.all.min.css") ?>"></script>
 </head>

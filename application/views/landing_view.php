@@ -150,18 +150,24 @@
 				<div class="row">
 					<div class="col text-center">
 						<h2 style="font-family: 'Lora', serif;" class="font-weight-bold">Artikel Terbaru</h2>
+						<hr>
 					</div>
 				</div>
 				<div class="row">
-					<div class="col-sm-4">
-						<div class="card">
-							<img class="card-img-top" src="" alt="">
-							<div class="card-body">
-								<h5 class="card-title">Title</h5>
-								<p class="card-text">Content</p>
+					<?php if ($blogs) : ?>
+						<?php foreach ($blogs as $blog) : ?>
+							<div class="col-sm-4">
+								<div class="card shadow border-0">
+									<img src="<?= base_url("assets/uploads/blogs/" . $blog["thumbnail"]) ?>" class="card-img-top" width="100%" style="object-cover; object-position: center; height:200px;">
+									<div class="card-body">
+										<a href="<?= base_url("blogs/" . $blog["slug"]) ?>" class="card-text font-weight-bold text-dark"><?= $blog["title"] ?></a>
+									</div>
+								</div>
 							</div>
-						</div>
-					</div>
+						<?php endforeach; ?>
+					<?php else : ?>
+						<img src="<?= base_url("assets/frontend/images/no-data.svg") ?>" width="400">
+					<?php endif; ?>
 				</div>
 			</div>
 		</section>
