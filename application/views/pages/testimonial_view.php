@@ -23,7 +23,7 @@
 							<section class="section-testimonials-content" id="testimonialsContent" style="margin-top:0;">
 								<div class="container">
 									<?= $this->session->flashdata('message'); ?>
-									<div class="section-popular-travel row justify-content-center match-height">
+									<div class="section-popular-travel row match-height">
 										<?php if ($testimonials) : ?>
 											<?php foreach ($testimonials as $testimonial) : ?>
 												<div class="col-sm-6 col-md-6 col-lg-4">

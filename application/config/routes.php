@@ -29,7 +29,6 @@ $route['logout'] = 'auth/logout';
  * customer routes
  */
 $route["home"] = "home";
-$route['detail-booking/(:num)'] = 'home/detail/$1';
 
 /**
  * admin routes
@@ -65,3 +64,10 @@ $route['kelola-blog/tambah'] = 'blog/create';
 $route['kelola-blog/detail/(:num)'] = 'blog/detail/$1';
 $route['kelola-blog/update/(:num)'] = 'blog/update/$1';
 $route['kelola-blog/hapus/(:num)'] = 'blog/delete/$1';
+
+/**
+ * profile routes
+ */
+$route['profile'] = 'profile';
+$route['profile/update'] = 'profile/updateProfile';
+$route['profile/ubah_password'] = 'profile/changepassword';

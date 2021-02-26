@@ -9,6 +9,8 @@ class Destination extends CI_Controller
 		parent::__construct();
 		$this->load->model('Destination_model');
 		$this->load->library('form_validation');
+		is_logged_in();
+		must_admin();
 	}
 
 	public function index()

@@ -23,7 +23,7 @@
 									<a href="<?= base_url("home") ?>">Data Booking</a>
 								</li>
 								<li>
-									<a href="">Profile Saya</a>
+									<a href="<?= base_url("profile") ?>">Profile Saya</a>
 								</li>
 								<li>
 									<a href="<?= base_url("logout") ?>" class="text-danger">Log Out</a>

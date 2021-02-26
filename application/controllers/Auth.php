@@ -11,6 +11,9 @@ class Auth extends CI_Controller
 
 	public function index()
 	{
+		if ($this->session->userdata("email")) {
+			redirect(base_url());
+		}
 		$data["title"] = "Login";
 
 		$this->_loginFormValidation();
@@ -43,7 +46,7 @@ class Auth extends CI_Controller
 				if ($setUserData["role"] == "admin") {
 					redirect("dashboard");
 				} else {
-					redirect("home");
+					redirect(base_url());
 				}
 			} else {
 				$this->session->set_flashdata('message', '<div class="alert alert-danger">Password yang kamu masukkan salah</div>');
@@ -57,6 +60,9 @@ class Auth extends CI_Controller
 
 	public function register()
 	{
+		if ($this->session->userdata("email")) {
+			redirect(base_url());
+		}
 		$data["title"] = "Register";
 
 		$this->__registerFormValidation();

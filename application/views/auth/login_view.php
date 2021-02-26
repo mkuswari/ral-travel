@@ -5,7 +5,7 @@
 <?php $this->load->view("components/auth/_head"); ?>
 <!-- end of head -->
 
-<body style="background-image: url(<?= base_url('assets/frontend/images/banner/sembalun-banner.jpg') ?>); background-size: cover;
+<body style="background-image: url(<?= base_url('assets/frontend/images/banner/sembalun-banner.jpg') ?>); background-size: auto;
 	background-position: center;">
 	<main>
 		<div class="container">

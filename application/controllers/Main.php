@@ -41,6 +41,8 @@ class Main extends CI_Controller
 
 	public function bookingTravel($id)
 	{
+		is_logged_in();
+
 		$data["title"] = "Booking Information";
 		$data["travel"] = $this->Main_model->getTravelById($id);
 		$data["duration"] = $this->input->post("duration");
@@ -51,6 +53,8 @@ class Main extends CI_Controller
 
 	public function processBooking($id)
 	{
+		is_logged_in();
+
 		$data["title"] = "Proses Booking Wisata";
 		$data["travel"] = $this->Main_model->getTravelById($id);
 		$data["duration"] = $this->input->post("duration");
@@ -90,6 +94,9 @@ class Main extends CI_Controller
 
 	public function paymentConfirmation($bookingCode)
 	{
+
+		is_logged_in();
+
 		$data["title"] = "Halaman Pembayaran";
 		$data["booking"] = $this->Main_model->getBookingByCode($bookingCode);
 
@@ -128,6 +135,8 @@ class Main extends CI_Controller
 
 	public function paymentSucessfully()
 	{
+		is_logged_in();
+
 		$data["title"] = "Pembayaran Berhasil";
 
 		$this->load->view("pages/payment_success_view", $data);
@@ -143,6 +152,8 @@ class Main extends CI_Controller
 
 	public function addTestimonial()
 	{
+		is_logged_in();
+
 		$userId = $this->session->userdata("user_id");
 		$content = $this->input->post('content');
 

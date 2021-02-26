@@ -125,23 +125,25 @@
 					</div>
 				<?php endif; ?>
 				<hr>
-				<div class="card shadow border-0">
-					<div class="card-body">
-						<div class="row">
-							<div class="col text-center">
-								<h4 class="font-weight-bold" style="font-family: 'Lora', serif;">Bagikan Cerita Kamu?</h4>
-								<p>Bagikan cerita seru kamu di RAL T&T melalui form dibawah ini.</p>
-								<hr>
-								<div class="testimonial-content px-5">
-									<form action="<?= base_url("testimoni/tambah") ?>" method="post">
-										<textarea class="form-control" name="content" id="content" rows="6" placeholder="Tuliskan pengalaman kamu menggunakan RAL T&T disini..." required></textarea>
-										<button type="submit" class="btn btn-login mt-2">Kirim Story Kamu</button>
-									</form>
+				<?php if ($this->session->userdata("email")) : ?>
+					<div class="card shadow border-0">
+						<div class="card-body">
+							<div class="row">
+								<div class="col text-center">
+									<h4 class="font-weight-bold" style="font-family: 'Lora', serif;">Bagikan Cerita Kamu?</h4>
+									<p>Bagikan cerita seru kamu di RAL T&T melalui form dibawah ini.</p>
+									<hr>
+									<div class="testimonial-content px-5">
+										<form action="<?= base_url("testimoni/tambah") ?>" method="post">
+											<textarea class="form-control" name="content" id="content" rows="6" placeholder="Tuliskan pengalaman kamu menggunakan RAL T&T disini..." required></textarea>
+											<button type="submit" class="btn btn-login mt-2">Kirim Story Kamu</button>
+										</form>
+									</div>
 								</div>
 							</div>
 						</div>
 					</div>
-				</div>
+				<?php endif; ?>
 			</div>
 		</section>
 
@@ -166,7 +168,7 @@
 							</div>
 						<?php endforeach; ?>
 					<?php else : ?>
-						<img src="<?= base_url("assets/frontend/images/no-data.svg") ?>" width="400">
+						<img src="<?= base_url("assets/frontend/images/no-data.svg") ?>" width="400" class="mx-auto">
 					<?php endif; ?>
 				</div>
 			</div>
