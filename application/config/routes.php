@@ -29,6 +29,7 @@ $route['logout'] = 'auth/logout';
  * customer routes
  */
 $route["home"] = "home";
+$route['detail-booking/(:num)'] = 'home/detail/$1';
 
 /**
  * admin routes

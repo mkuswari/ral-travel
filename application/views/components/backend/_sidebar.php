@@ -35,9 +35,6 @@
 				<a href="" class="nav-link"><i class="fas fa-user-cog"></i> <span>Profile Saya</span></a>
 			</li>
 			<li>
-				<a href="" class="nav-link"><i class="fas fa-cogs"></i> <span>Pengaturan</span></a>
-			</li>
-			<li>
 				<a class="nav-link text-danger" href="<?= base_url("logout") ?>"><i class="fas fa-sign-out-alt"></i> <span>Sign Out</span></a>
 			</li>
 		</ul>

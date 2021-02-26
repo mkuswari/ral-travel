@@ -20,10 +20,7 @@
 							<hr>
 							<ul>
 								<li>
-									<a href="">Dashboard</a>
-								</li>
-								<li>
-									<a href="">Booking Saya</a>
+									<a href="<?= base_url("home") ?>">Data Booking</a>
 								</li>
 								<li>
 									<a href="">Profile Saya</a>
@@ -36,22 +33,30 @@
 					</div>
 					<div class="col-lg-9 pl-lg-0">
 						<div class="card card-details mb-3">
-							<h1>Dashboard Saya</h1>
+							<h1>Data Booking</h1>
 							<hr>
-							<div class="card mb-3" style="max-width: 540px;">
-								<div class="row no-gutters">
-									<div class="col-md-4">
-										<img src="<?= base_url("assets/uploads/avatars/" . $this->session->userdata("avatar")) ?>" width="100%">
-									</div>
-									<div class="col-md-8">
-										<div class="card-body">
-											<h5 class="card-title"><?= $this->session->userdata("name"); ?></h5>
-											<p class="card-text"><?= $this->session->userdata("email"); ?></p>
-											<p class="card-text"><small class="text-muted">Join : <?= date('d F M Y', strtotime($this->session->userdata("created_at"))); ?></small></p>
-										</div>
-									</div>
-								</div>
-							</div>
+							<table class="table">
+								<thead class="thead-light">
+									<tr>
+										<th scope="col">Kode Booking</th>
+										<th scope="col">Tujuan</th>
+										<th scope="col">Tangal Traveling</th>
+										<th scope="col">Durasi</th>
+									</tr>
+								</thead>
+								<tbody>
+									<?php foreach ($bookings as $booking) : ?>
+										<tr>
+											<td><?= $booking["booking_code"] ?></td>
+											<td><?= $booking["travel_name"] ?></td>
+											<td>
+												<?= date('d F Y', strtotime($booking["travel_date"])) ?>
+											</td>
+											<td><?= $booking["duration"] ?> Hari</td>
+										</tr>
+									<?php endforeach; ?>
+								</tbody>
+							</table>
 						</div>
 					</div>
 				</div>

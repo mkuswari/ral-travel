@@ -48,7 +48,7 @@
 						<section class="section-popular-content mt-4" id="popularContent">
 							<h4 class="font-weight-bold">Wisata Lainnya</h4>
 							<hr>
-							<div class="section-popular-travel row justify-content-center">
+							<div class="section-popular-travel row">
 								<?php foreach ($travels as $travel) : ?>
 									<div class="col-sm-6 col-md-4 col-lg-4">
 										<div class="card-travel text-center d-flex flex-column shadow-lg" style="background-image: url('http://localhost/ral-travel/assets/uploads/travels/<?= $travel["images"] ?>');">
