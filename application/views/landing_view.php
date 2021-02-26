@@ -29,19 +29,19 @@
 		<div class="container">
 			<section class="section-stats row justify-content-center" id="stats">
 				<div class="col-3 col-md-2 stats-detail">
-					<h2>200</h2>
+					<h2><?= $total_user ?></h2>
 					<p>Member</p>
 				</div>
 				<div class="col-3 col-md-2 stats-detail">
-					<h2>12</h2>
+					<h2><?= $total_destination ?></h2>
 					<p>Paket Wisata</p>
 				</div>
 				<div class="col-3 col-md-2 stats-detail">
-					<h2>3</h2>
+					<h2><?= $total_testimonial ?></h2>
 					<p>Testimonial</p>
 				</div>
 				<div class="col-3 col-md-2 stats-detail">
-					<h2>72</h2>
+					<h2><?= $total_blog ?></h2>
 					<p>Artikel</p>
 				</div>
 			</section>

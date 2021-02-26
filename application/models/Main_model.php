@@ -96,4 +96,24 @@ class Main_model extends CI_Model
 		// return $this->db->get()->row_array();
 		return $this->db->get_where("blogs", ["slug" => $slug])->row_array();
 	}
+
+	public function countAllUsers()
+	{
+		return $this->db->get('users')->num_rows();
+	}
+
+	public function countAllTravels()
+	{
+		return $this->db->get('travels')->num_rows();
+	}
+
+	public function countAllTestimonials()
+	{
+		return $this->db->get('testimonials')->num_rows();
+	}
+
+	public function countAllBlogs()
+	{
+		return $this->db->get('blogs')->num_rows();
+	}
 }

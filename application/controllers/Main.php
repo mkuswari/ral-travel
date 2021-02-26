@@ -18,6 +18,12 @@ class Main extends CI_Controller
 		$data["testimonials"] = $this->Main_model->getNewTestimonials();
 		$data["blogs"] = $this->Main_model->getLatestBlog();
 
+		// statistic
+		$data["total_user"] = $this->Main_model->countAllUsers();
+		$data["total_destination"] = $this->Main_model->countAllTravels();
+		$data["total_testimonial"] = $this->Main_model->countAllTestimonials();
+		$data["total_blog"] = $this->Main_model->countAllBlogs();
+
 		$this->load->view('landing_view', $data);
 	}
 
