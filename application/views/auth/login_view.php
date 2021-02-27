@@ -32,7 +32,7 @@
 									<input type="checkbox" class="form-check-input" id="remember" name="remember">
 									<label class="form-check-label" for="remember">Remember Me</label>
 								</div>
-								<button type="submit" class="btn btn-block btn-login">Submit</button>
+								<button type="submit" class="btn btn-block btn-login">Login</button>
 								<a href="<?= base_url("register") ?>" class="btn btn-block btn-light">Register</a>
 								<div class="text-center mt-3">
 									<a href="" class="text-muted">Lupa Password?</a>

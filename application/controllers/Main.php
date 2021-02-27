@@ -32,6 +32,10 @@ class Main extends CI_Controller
 		$data["title"] = "Katalog Paket Wisata";
 		$data["travels"] = $this->Main_model->getAllTravels();
 
+		if ($this->input->post("keyword")) {
+			$data["travels"] = $this->Main_model->getSearchResultsFromTravel();
+		}
+
 		$this->load->view('pages/catalogs_view', $data);
 	}
 
@@ -177,6 +181,10 @@ class Main extends CI_Controller
 	{
 		$data["title"] = "Blogs";
 		$data["blogs"] = $this->Main_model->getAllBlogs();
+
+		if ($this->input->post("keyword")) {
+			$data["blogs"] = $this->Main_model->getSearchResultsFromBlog();
+		}
 
 		$this->load->view("pages/blogs_view", $data);
 	}

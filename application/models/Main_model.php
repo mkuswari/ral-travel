@@ -116,4 +116,18 @@ class Main_model extends CI_Model
 	{
 		return $this->db->get('blogs')->num_rows();
 	}
+
+	public function getSearchResultsFromTravel()
+	{
+		$keyword = $this->input->post("keyword");
+		$this->db->like("name", $keyword);
+		return $this->db->get("travels")->result_array();
+	}
+
+	public function getSearchResultsFromBlog()
+	{
+		$keyword = $this->input->post("keyword");
+		$this->db->like("title", $keyword);
+		return $this->db->get("blogs")->result_array();
+	}
 }

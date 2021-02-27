@@ -25,14 +25,16 @@
 									<h4>Semua Wisata</h2>
 
 								</div>
-								<!-- <div class="col-5 align-self-center">
-									<div class="input-group mb-3">
-										<input type="text" class="form-control" placeholder="Cari Wisata..." aria-label="Recipient's username" aria-describedby="button-addon2">
-										<div class="input-group-append">
-											<button class="btn btn-login" type="submit">Search</button>
+								<div class="col-5 align-self-center">
+									<form action="<?= base_url("katalog-wisata") ?>" method="post">
+										<div class="input-group mb-3">
+											<input type="text" class="form-control" placeholder="Cari Nama Wisata..." name="keyword" id="keyword">
+											<div class="input-group-append">
+												<button class="btn btn-login" type="submit">Search</button>
+											</div>
 										</div>
-									</div>
-								</div> -->
+									</form>
+								</div>
 							</div>
 							<hr>
 							<section class="section-popular-content" id="popularContent">
