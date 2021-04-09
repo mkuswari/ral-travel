@@ -57,7 +57,7 @@
 															<td><?= $travel["location"] ?></td>
 															<td>IDR. <?= number_format($travel["price"]) ?></td>
 															<td>
-																<a href="<?= base_url("paket/" . $travel["slug"]) ?>" class="btn btn-info btn-icon"><i class="fas fa-eye"></i></a>
+																<a href="<?= base_url("detail/" . $travel["slug"]) ?>" class="btn btn-info btn-icon"><i class="fas fa-eye"></i></a>
 																<a href="<?= base_url("kelola-wisata/update/" . $travel["travel_id"]) ?>" class="btn btn-warning btn-icon"><i class="fas fa-pencil-alt"></i></a>
 																<a href="<?= base_url("kelola-wisata/hapus/" . $travel["travel_id"]) ?>" class="btn btn-danger btn-icon btn-delete"><i class="fas fa-trash"></i></a>
 															</td>
