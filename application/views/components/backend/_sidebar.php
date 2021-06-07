@@ -19,7 +19,10 @@
 				<a href="<?= base_url("kelola-wisata") ?>" class="nav-link"><i class="fas fa-umbrella-beach"></i> <span>Kelola Wisata</span></a>
 			</li>
 			<li>
-				<a href="<?= base_url("kelola-booking") ?>" class="nav-link"><i class="fas fa-credit-card"></i> <span>Kelola Booking</span></a>
+				<a href="<?= base_url("kelola-booking") ?>" class="nav-link"><i class="fas fa-bookmark"></i> <span>Kelola Booking</span></a>
+			</li>
+			<li>
+				<a href="<?= base_url("kelola-pembayaran") ?>" class="nav-link"><i class="fas fa-credit-card"></i> <span>Kelola Pembayaran</span></a>
 			</li>
 			<li>
 				<a href="<?= base_url("kelola-testimoni") ?>" class="nav-link"><i class="fas fa-pencil-alt"></i> <span>Kelola Testimoni</span></a>

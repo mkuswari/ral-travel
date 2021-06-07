@@ -42,6 +42,7 @@
 										<th scope="col">Tujuan</th>
 										<th scope="col">Tangal Traveling</th>
 										<th scope="col">Durasi</th>
+										<th scope="col">Opsi</th>
 									</tr>
 								</thead>
 								<tbody>
@@ -53,6 +54,9 @@
 												<?= date('d F Y', strtotime($booking["travel_date"])) ?>
 											</td>
 											<td><?= $booking["duration"] ?> Hari</td>
+											<td>
+												<a href="<?= base_url("detail-booking/" . $booking["booking_id"]) ?>">Detail</a>
+											</td>
 										</tr>
 									<?php endforeach; ?>
 								</tbody>

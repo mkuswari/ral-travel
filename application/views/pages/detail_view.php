@@ -83,7 +83,7 @@
 								<hr>
 								<div class="form-group">
 									<label for="duration">Berapa Hari</label>
-									<input type="number" class="form-control <?= form_error("duration") ? "is-invalid" : "" ?>" name="duration" id="duration" value="1">
+									<input type="number" class="form-control <?= form_error("duration") ? "is-invalid" : "" ?>" name="duration" id="duration" value="1" min="1">
 									<?= form_error('name', '<div class="invalid-feedback font-weight-bold pl-1">', '</div>') ?>
 								</div>
 								<div class="form-group">

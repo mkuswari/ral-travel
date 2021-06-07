@@ -21,9 +21,8 @@ class Home extends CI_Controller
 	{
 		$data["title"] = "Detail Data Bookings";
 		$data["booking"] = $this->Home_model->getBookingById($id);
+		$data["payment"] = $this->Home_model->getPaymentInfo($id);
 
-		var_dump($data["booking"]);
-		die;
-		// $this->load->view("frontend/booking_detail_view", $data);
+		$this->load->view("frontend/booking/detail_view", $data);
 	}
 }

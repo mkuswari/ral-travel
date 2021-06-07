@@ -22,4 +22,9 @@ class Home_model extends CI_Model
 		$this->db->where("booking_id", $id);
 		return $this->db->get()->row_array();
 	}
+
+	public function getPaymentInfo($id)
+	{
+		return $this->db->get_where('payment_confirmations', ['booking_id' => $id])->row_array();
+	}
 }

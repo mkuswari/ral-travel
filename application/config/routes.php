@@ -29,6 +29,7 @@ $route['logout'] = 'auth/logout';
  * customer routes
  */
 $route["home"] = "home";
+$route["detail-booking/(:num)"] = "home/detail/$1";
 
 /**
  * admin routes
@@ -53,6 +54,9 @@ $route['kelola-wisata/hapus/(:num)'] = 'travel/delete/$1';
 $route['kelola-booking'] = 'booking';
 $route['kelola-booking/detail/(:num)'] = 'booking/detail/$1';
 $route['kelola-booking/hapus/(:num)'] = 'booking/delete/$1';
+
+$route['kelola-pembayaran'] = 'payment';
+$route["kelola-pembayaran/ubahstatus/(:num)"] = "payment/changePaymentStatus/$1";
 
 $route['kelola-testimoni'] = 'testimonial';
 $route['kelola-testimoni/tambah'] = 'testimonial/create';
